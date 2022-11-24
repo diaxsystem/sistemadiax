@@ -5,7 +5,7 @@
             <div class="card h-100">
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                  <h5 class="text-white text-capitalize ps-3">Registro de Pacientes</h5>
+                  <h5 class="text-white text-capitalize ps-3">Informes de Doctores</h5>
                 </div>
               </div>
               <div class="card-body">
@@ -21,7 +21,7 @@
 <script>
     export default {
         mounted() {
-            console.log('Componente del Registro de Pacientes.')
+            console.log('Componente del Informes Doctores.')
         }
     }
 </script>

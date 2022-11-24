@@ -9,7 +9,18 @@
                 </div>
               </div>
               <div class="card-body">
-                <div id="vector-map" class="mt-5 min-height-500"></div>
+                <div class="form-check form-check-info text-start ps-0">
+                  <input class="form-input" type="date" value=""  >
+                  <label class="form-label" for="flexCheckDefault">
+                    Cedula
+                  </label>
+                
+                 
+                  <input class="form-input" type="date" value=""  >
+                  <label class="form-label" for="flexCheckDefault">
+                      Nombre
+                  </label>
+                </div>
               </div>
             </div>
           </div>
