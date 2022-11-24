@@ -10,16 +10,20 @@
               </div>
               <div class="card-body">
                 <div class="form-check form-check-info text-start ps-0">
-                  <input class="form-input" type="date" value=""  >
                   <label class="form-label" for="flexCheckDefault">
                     Cedula
                   </label>
+                  <input class="form-input" type="date" value=""  style="width:200px; 
+                  height:35px; border: 1px solid #C70039;
+                  border-radius:10px; padding:0 10px; margin:auto;">
                 
                  
-                  <input class="form-input" type="date" value=""  >
                   <label class="form-label" for="flexCheckDefault">
-                      Nombre
+                    Nombre
                   </label>
+                  <input class="form-input" type="date" value="" style="width:200px; 
+                  height:35px; border: 1px solid #C70039;
+                  border-radius:10px; padding:0 10px; margin:auto;">
                 </div>
               </div>
             </div>

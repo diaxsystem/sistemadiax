@@ -9,7 +9,35 @@
                 </div>
               </div>
               <div class="card-body">
-                <div id="vector-map" class="mt-5 min-height-500"></div>
+                <form role="form">
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label"></label>
+                    <input type="text" class="form-control" placeholder="Seleccione el Doctor">
+                  </div>
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label"></label>
+                    <input type="email" class="form-control" placeholder="Seleccione la Especialidad">
+                  </div>
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label"></label>
+                    <input type="text" class="form-control" placeholder="Seleccione la Especialidad">
+                  </div>
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label"></label>
+                    <input type="text" class="form-control" placeholder="Seleccione la Especialidad">
+                  </div>
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label"></label>
+                    <input type="text" class="form-control" placeholder="Seleccione la Especialidad">
+                  </div>
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label"></label>
+                    <input type="number" class="form-control" placeholder="Seleccione la Especialidad">
+                  </div>
+                  <div class="text-center">
+                    <button type="button" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Registrar</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

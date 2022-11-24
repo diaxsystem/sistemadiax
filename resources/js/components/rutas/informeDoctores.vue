@@ -9,7 +9,30 @@
                 </div>
               </div>
               <div class="card-body">
-                <div id="vector-map" class="mt-5 min-height-500"></div>
+                <div class="card-body">
+                  <div class="form-check form-check-info text-start ps-0">
+                    <label class="form-label" for="flexCheckDefault">
+                      Cedula
+                    </label>
+                    <input class="form-input" type="date" value=""  style="width:200px; 
+                    height:35px; border: 1px solid #C70039;
+                    border-radius:10px; padding:0 10px; margin:auto;">
+                  
+                   
+                    <label class="form-label" for="flexCheckDefault">
+                      Nombre
+                    </label>
+                    <input class="form-input" type="date" value="" style="width:200px; 
+                    height:35px; border: 1px solid #C70039;
+                    border-radius:10px; padding:0 10px; margin:auto;">
+                  </div>
+                </div>
+
+                <div class="input-group input-group-outline mb-3">
+                  <label class="form-label"></label>
+                  <input type="text" class="form-control" placeholder="Seleccione su Doctor">
+                </div>
+
               </div>
             </div>
           </div>
