@@ -1,0 +1,1 @@
+<?php include('resources/Auth/login.blade.php');?>
