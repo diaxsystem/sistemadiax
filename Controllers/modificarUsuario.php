@@ -60,7 +60,7 @@ if (empty($_REQUEST['id'])) {
 $id = $_REQUEST['id'];
 
 $sql = mysqli_query($conection, "SELECT u.idusuario,u.cedula,u.nombre,u.correo,u.usuario,u.pass,u.rol,r.descripcion 
-FROM usuarios u INNER JOIN roles r ON r.id_rol = u.rol  where u.idusuario = $id AND u.estatus = 1");
+FROM usuarios u INNER JOIN roles r ON r.id = u.rol  where u.idusuario = $id AND u.estatus = 1");
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
