@@ -43,12 +43,7 @@ require_once('../Models/conexion.php');
                                         <th>
                                             Puesto
                                         </th>
-                                        <th>
-                                            Editar
-                                        </th>
-                                        <th>
-                                            Eliminar
-                                        </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -67,21 +62,7 @@ require_once('../Models/conexion.php');
                                                 <td><?php echo $data['correo']; ?></td>
                                                 <td><?php echo $data['usuario']; ?></td>
                                                 <td><?php echo $data['descripcion'] ?></td>
-                                                <?php if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) { ?>
-                                                    <td>
-                                                        <a href="../View/modificarUsuario.php?id=<?php echo $data['idusuario']; ?>" class="btn btn-outline-info" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px  rgba(0, 0, 0, 0.25);"><i class="typcn typcn-edit"></i></a>
-                                                    </td>
-                                                <?php } ?>
-                                                <?php if ($_SESSION['rol'] == 1) { ?>
-                                                    <td>
-                                                        <button onclick="EliminarUsuario('<?php echo $data['idusuario']; ?>')" class="btn btn-outline-danger" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px  rgba(0, 0, 0, 0.25);"><i class="typcn typcn-user-delete-outline"></i></button>
-                                                    </td>
-                                                <?php } ?>
-                                                <?php if ($_SESSION['rol'] == 2) { ?>
-                                                    <td>
-                                                        <a href="#" onclick="permisoAuto()" class="btn btn-outline-danger" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px  rgba(0, 0, 0, 0.25);"><i class="typcn typcn-user-delete-outline"></i></a>
-                                                    </td>
-                                                <?php } ?>
+                                               
                                             </tr>
                                     <?php }
                                     } ?>
