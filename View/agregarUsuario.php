@@ -58,6 +58,7 @@ require_once('../Controllers/grabarUsuario.php');
                     <option value="6">Radiologo 2</option>
                   </select>
                 </div>
+                <input type="hidden" name="estatus" id="estatus" value="1">
                 <button type="submit" class="btn btn-primary mr-2">Registrar</button>
                 <a class="btn btn-light" href="../Templates/usuarios.php">Cancelar</a>
                 <br>

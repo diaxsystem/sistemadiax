@@ -18,6 +18,7 @@ if (!empty($_POST)) {
             $usuario  = $_POST['usuario'];
             $pass     = md5($_POST['pass']);
             $rol      = $_POST['rol'];
+            $estatus  = $_POST['estatus'];
            
             
 
@@ -29,8 +30,8 @@ if (!empty($_POST)) {
             $alert = '<p class = "msg_error">La cedula o el correo o Usuario ya existen</p>';
         }else{
 
-            $query_insert = mysqli_query($conection,"INSERT INTO usuarios(cedula,nombre,correo,usuario,pass,rol)
-                VALUES('$cedula','$nombre','$correo','$usuario','$pass','$rol')");
+            $query_insert = mysqli_query($conection,"INSERT INTO usuarios(cedula,nombre,correo,usuario,pass,rol,estatus)
+                VALUES('$cedula','$nombre','$correo','$usuario','$pass','$rol','$estatus')");
 
             if ($query_insert ) {
               
