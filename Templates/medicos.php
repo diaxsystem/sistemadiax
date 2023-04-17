@@ -43,13 +43,14 @@ require_once('../Models/conexion.php');
                                 </thead>
                                 <tbody>
                                     <?php
-                                    if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) {
-                                        $sql = mysqli_query($conection, "SELECT m.id,m.nombre,m.especialidad,m.dia,m.hora,m.tcobro FROM medicos m WHERE m.estatus = 1; ");
-                                    } else if ($_SESSION['rol'] == 5 || $_SESSION['rol'] == 6) {
-
-                                        $sql = mysqli_query($conection, "SELECT m.id,m.nombre,m.especialidad,m.dia,m.hora,m.tcobro 
-                                         FROM medicos m WHERE m.Especialidad LIKE '%Informante%' AND m.estatus = 1 ");
-                                    }
+                                 if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) {
+                                    $sql = mysqli_query($conection, "SELECT m.id,m.Nombre,m.usuario,m.Especialidad,m.Dia,m.Hora,m.Tcobro FROM medicos m 
+                                            WHERE m.estatus = 1 ORDER BY  m.id DESC");
+                                  } else if ($_SESSION['rol'] == 5 || $_SESSION['rol'] == 6) {
+                    
+                                    $sql = mysqli_query($conection, "SELECT m.id,m.Nombre,m.usuario,m.Especialidad,m.Dia,m.Hora,m.Tcobro 
+                                            FROM medicos m WHERE m.Especialidad LIKE '%Informante%' AND m.estatus = 1 ORDER BY   m.id DESC");
+                                  }
                                     $resultado = mysqli_num_rows($sql);
 
                                     if ($resultado > 0) {
