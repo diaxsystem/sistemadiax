@@ -10,12 +10,12 @@ $nombre = $_POST['inptudNombre'];
 
 
 if ($cedula && empty($nombre)) {
-    $sql = mysqli_query($conection, "SELECT u.id_usuario,u.cedula,u.nombre,u.correo,u.fecha_nac,u.telefono,u.sexo
-    FROM usuario u  where u.cedula LIKE '".$cedula."' AND u.estatus = 1;");
+    $sql = mysqli_query($conection, "SELECT u.idusuario,u.cedula,u.nombre,u.correo,u.fecha_nac,u.telefono,u.sexo
+    FROM usuarios u  where u.cedula LIKE '".$cedula."' AND u.estatus = 1;");
 } else {
 
-    $sql = mysqli_query($conection, "SELECT u.id_usuario,u.cedula,u.nombre,u.correo,u.fecha_nac,u.telefono,u.sexo
-    FROM usuario u   where u.nombre LIKE '".$nombre."' AND u.estatus = 1;");
+    $sql = mysqli_query($conection, "SELECT u.idusuario,u.cedula,u.nombre,u.correo,u.fecha_nac,u.telefono,u.sexo
+    FROM usuarios u   where u.nombre LIKE '".$nombre."' AND u.estatus = 1;");
 }
 
 
@@ -52,7 +52,7 @@ while ($data = mysqli_fetch_array($sql)) {
             <td>' . $data['sexo'] . '</td>
             <td>' . $data['fecha_nac'] . '</td>
             <td>'.
-             '<a href="../View/modificarPaciente.php?id='. $data['id_usuario'].' "
+             '<a href="../View/modificarPaciente.php?id='. $data['idusuario'].' "
               class="btn btn-outline-primary" ><i class="fa fa-user-edit"></i> Actualizar</a>' .  '</td>
             </tr>
           </tbody>

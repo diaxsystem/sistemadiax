@@ -24,8 +24,8 @@ if (!empty($_POST)) {
 		//exit; sirve para ejectuar la consulta en mysql
 		$query = mysqli_query(
 			$conection,
-			"SELECT * FROM usuario
-				WHERE  id_usuario != id_usuario"
+			"SELECT * FROM usuarios
+				WHERE  idusuario != idusuario"
 		);
 
 		$resultado = mysqli_fetch_array($query);
@@ -35,8 +35,8 @@ if (!empty($_POST)) {
 		$alert = '<p class = "msg_error">El Registro ya existe,ingrese otro</p>';
 	} else {
 
-		$sql_update = mysqli_query($conection, "UPDATE usuario SET cedula = '$cedula',nombre = '$nombre', telefono = '$telefono',fecha_nac = '$fecha_nac',sexo = '$sexo', estatus = 1
-				WHERE id_usuario = $id");
+		$sql_update = mysqli_query($conection, "UPDATE usuarios SET cedula = '$cedula',nombre = '$nombre', telefono = '$telefono',fecha_nac = '$fecha_nac',sexo = '$sexo', estatus = 1
+				WHERE idusuario = $id");
 
 		if ($sql_update) {
 
@@ -58,8 +58,8 @@ if (empty($_REQUEST['id'])) {
 
 $id = $_REQUEST['id'];
 
-$sql = mysqli_query($conection, "SELECT u.id_usuario,u.cedula,u.nombre,u.fecha_nac,u.sexo,u.telefono
-FROM usuario u   where u.id_usuario = $id AND u.estatus = 1");
+$sql = mysqli_query($conection, "SELECT u.idusuario,u.cedula,u.nombre,u.fecha_nac,u.sexo,u.telefono
+FROM usuarios u   where u.idusuario = $id AND u.estatus = 1");
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
@@ -72,7 +72,7 @@ if ($resultado == 0) {
 	$option = '';
 	while ($data = mysqli_fetch_array($sql)) {
 
-		$id             = $data['id_usuario'];
+		$id             = $data['idusuario'];
 		$cedula         = $data['cedula'];
 		$nombre         = $data['nombre'];
 		$telefono       = $data['telefono'];
