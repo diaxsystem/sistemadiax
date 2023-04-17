@@ -118,13 +118,13 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="typcn typcn-user-add-outline menu-icon"></i>
-              <span class="menu-title">User Pages</span>
+              <i class="typcn typcn-flow-children menu-icon"></i>
+              <span class="menu-title">Estudios </span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/estudios.php"> Lista de Estudios </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
               </ul>
             </div>
