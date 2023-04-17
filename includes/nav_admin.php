@@ -202,7 +202,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="typcn typcn-document-text menu-icon"></i>
+              <i class="typcn typcn-group menu-icon"></i>
               <span class="menu-title">Usuarios</span>
               <i class="menu-arrow"></i>
             </a>
@@ -215,13 +215,13 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-film menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <i class="typcn typcn-vendor-android menu-icon"></i>
+              <span class="menu-title">Roles</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                <li class="nav-item"><a class="nav-link" href="../Templates/roles.php">Roles del Sistema</a></li>
               </ul>
             </div>
           </li>
