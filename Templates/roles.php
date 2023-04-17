@@ -31,6 +31,12 @@ require_once('../Models/conexion.php');
                                             #
                                         </th>
                                         <th>
+<<<<<<< HEAD
+=======
+                                            Nombre
+                                        </th>
+                                        <th>
+>>>>>>> bef06eef240604c20b0212640249ab878f585eb5
                                             Descripción
                                         </th>
   
@@ -38,7 +44,11 @@ require_once('../Models/conexion.php');
                                 </thead>
                                 <tbody>
                                     <?php
+<<<<<<< HEAD
                                     $sql = mysqli_query($conection, "SELECT r.id,r.descripcion FROM roles r  WHERE r.status = 1");
+=======
+                                    $sql = mysqli_query($conection, "SELECT r.id,r.descripcion FROM roles  WHERE status = 1");
+>>>>>>> bef06eef240604c20b0212640249ab878f585eb5
 
                                     $resultado = mysqli_num_rows($sql);
 

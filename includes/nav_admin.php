@@ -221,7 +221,11 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
+<<<<<<< HEAD
                 <li class="nav-item"><a class="nav-link" href="../Templates/roles.php">Roles del Sistema</a></li>
+=======
+                <li class="nav-item"><a class="nav-link" href="../Templates/roles">Roles del Sistema</a></li>
+>>>>>>> bef06eef240604c20b0212640249ab878f585eb5
               </ul>
             </div>
           </li>
