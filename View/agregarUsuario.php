@@ -52,8 +52,8 @@ require_once('../Controllers/grabarUsuario.php');
                       <option value="1">Administrador</option>
                     <?php } ?>
                     <option value="2">Recepcionista</option>
-                    <option value="3">Doctor</option>
-                    <option value="4">Paciente</option>
+                    <option value="3">Paciente</option>
+                    <option value="4">Doctor</option>
                     <option value="5">Radiologo 1</option>
                     <option value="6">Radiologo 2</option>
                   </select>
