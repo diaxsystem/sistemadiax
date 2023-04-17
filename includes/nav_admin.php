@@ -125,7 +125,7 @@
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Templates/estudios.php"> Lista de Estudios </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/estudiosEliminados.php"> Estudios Eliminados </a></li>
               </ul>
             </div>
           </li>
