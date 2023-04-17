@@ -25,8 +25,8 @@ if (!empty($_POST)) {
 		//exit; sirve para ejectuar la consulta en mysql
 		$query = mysqli_query(
 			$conection,
-			"SELECT * FROM usuario
-				WHERE  id_usuario != id_usuario"
+			"SELECT * FROM usuarios
+				WHERE  idusuario != idusuario"
 		);
 
 		$resultado = mysqli_fetch_array($query);
@@ -36,7 +36,7 @@ if (!empty($_POST)) {
 		$alert = '<p class = "msg_error">El Registro ya existe,ingrese otro</p>';
 	} else {
 
-		$sql_update = mysqli_query($conection, "UPDATE usuario SET cedula = '$cedula',nombre = '$nombre',usuario = '$usuario', pass = '$pass',correo = '$correo',rol = '$rol', estatus = 1
+		$sql_update = mysqli_query($conection, "UPDATE usuarios SET cedula = '$cedula',nombre = '$nombre',usuario = '$usuario', pass = '$pass',correo = '$correo',rol = '$rol', estatus = 1
 				WHERE idusuario = $id");
 
 		if ($sql_update) {
@@ -60,7 +60,7 @@ if (empty($_REQUEST['id'])) {
 $id = $_REQUEST['id'];
 
 $sql = mysqli_query($conection, "SELECT u.idusuario,u.cedula,u.nombre,u.correo,u.usuario,u.pass,u.rol,r.descripcion 
-FROM usuarioS u INNER JOIN roles r ON r.id_rol = u.rol  where u.idusuario = $id AND u.estatus = 1");
+FROM usuarios u INNER JOIN roles r ON r.id_rol = u.rol  where u.idusuario = $id AND u.estatus = 1");
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
