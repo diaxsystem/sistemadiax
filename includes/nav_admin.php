@@ -91,25 +91,28 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="typcn typcn-th-small-outline menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <i class="typcn typcn-group-outline menu-icon"></i>
+              <span class="menu-title">Medicos</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/medicos.php">Lista de Medicos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/medicosEliminados.php">Medicos Eliminados</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="typcn typcn-compass menu-icon"></i>
-              <span class="menu-title">Icons</span>
+              <i class="typcn typcn-trash menu-icon"></i>
+              <span class="menu-title">Eliminaciones</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Extension/pedidoMedicos.php">Medicos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/medicos.php">Gastos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/medicos.php">Ordenes</a></li>
               </ul>
             </div>
           </li>
