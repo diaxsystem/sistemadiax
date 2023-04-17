@@ -17,7 +17,7 @@ if (empty($_SESSION['active'])) {
 	
 		}else{
 	
-			$id                  = $_POST['id'];
+			$id                  = $_POST['idusuario'];
 			$cedula              = $_POST['cedula'];
 			$nombre              = $_POST['nombre'];
 			$correo              = $_POST['correo'];
@@ -31,8 +31,8 @@ if (empty($_SESSION['active'])) {
 	
 			//WHERE(usuario = '$user' AND idusuario != $iduser) or (correo = '$email' AND idusuario != $iduser";
 	//exit; sirve para ejectuar la consulta en mysql
-			$query = mysqli_query($conection,"SELECT * FROM usuario
-				WHERE  id != id"
+			$query = mysqli_query($conection,"SELECT * FROM usuarios
+				WHERE  idusuario != idusuario"
 			);
 	
 			$resultado = mysqli_fetch_array($query);
@@ -45,7 +45,7 @@ if (empty($_SESSION['active'])) {
 	
 		}else{
 	
-			$sql_update = mysqli_query($conection,"UPDATE usuario SET cedula = '$cedula',nombre = '$nombre',usuario = '$usuario', pass = '$pass',correo = '$correo',rol = '$rol', estado = 1
+			$sql_update = mysqli_query($conection,"UPDATE usuarios SET cedula = '$cedula',nombre = '$nombre',usuario = '$usuario', pass = '$pass',correo = '$correo',rol = '$rol', estado = 1
 				WHERE id = $id");
 	
 			if ($sql_update) {
@@ -69,7 +69,7 @@ if (empty($_REQUEST['id'])) {
 
 $id = $_REQUEST['id'];
 
-$sql = mysqli_query($conection,"SELECT * FROM usuario  WHERE id = $id AND estado = 1");   
+$sql = mysqli_query($conection,"SELECT * FROM usuario  WHERE idusuario = $id AND estado = 1");   
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
