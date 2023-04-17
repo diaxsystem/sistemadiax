@@ -24,13 +24,12 @@ require_once('../Models/conexion.php');
                         <h4>Roles del Sistema </h4>
 
                         <div class="table-responsive pt-3">
-                            <table class="table table-bordered" id="tabla">
+                            <table class="table table-bordered text-center" id="tabla">
                                 <thead>
                                     <tr>
                                         <th>
                                             #
                                         </th>
-                                        <th>
 
                                         <th>
 
