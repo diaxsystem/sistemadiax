@@ -53,8 +53,8 @@ require_once('../Models/conexion.php');
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = mysqli_query($conection, "SELECT u.id_usuario,u.nombre,u.correo,u.usuario,r.descripcion 
-                                    FROM usuario u INNER JOIN roles r ON r.id_rol = u.rol  where  u.estatus = 1 ORDER BY  u.id_usuario DESC");
+                                    $sql = mysqli_query($conection, "SELECT u.idusuario,u.nombre,u.correo,u.usuario,r.descripcion 
+                                    FROM usuarios u INNER JOIN roles r ON r.id = u.rol  where  u.estatus = 1 ORDER BY  u.idusuario DESC");
 
                                     $resultado = mysqli_num_rows($sql);
 
@@ -62,19 +62,19 @@ require_once('../Models/conexion.php');
                                         while ($data = mysqli_fetch_array($sql)) {
                                     ?>
                                             <tr>
-                                                <td><?php echo $data['id_usuario']; ?></td>
+                                                <td><?php echo $data['idusuario']; ?></td>
                                                 <td><?php echo $data['nombre']; ?></td>
                                                 <td><?php echo $data['correo']; ?></td>
                                                 <td><?php echo $data['usuario']; ?></td>
                                                 <td><?php echo $data['descripcion'] ?></td>
                                                 <?php if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) {?>
                           <td>
-                             <a href="../View/modificarUsuario.php?id=<?php echo $data['id_usuario']; ?>"class="btn btn-outline-info" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px  rgba(0, 0, 0, 0.25);"><i class="typcn typcn-edit"></i></a>
+                             <a href="../View/modificarUsuario.php?id=<?php echo $data['idusuario']; ?>"class="btn btn-outline-info" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px  rgba(0, 0, 0, 0.25);"><i class="typcn typcn-edit"></i></a>
                           </td>
                       <?php } ?>
                       <?php if($_SESSION['rol'] == 1 ){ ?>
                           <td>
-                            <button onclick="EliminarUsuario('<?php echo $data['id_usuario']; ?>')"
+                            <button onclick="EliminarUsuario('<?php echo $data['idusuario']; ?>')"
                             class="btn btn-outline-danger" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px  rgba(0, 0, 0, 0.25);"><i class="typcn typcn-user-delete-outline"></i></button>
                           </td>
                     <?php } ?>
