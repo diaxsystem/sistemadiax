@@ -43,11 +43,11 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="typcn typcn-cog-outline text-primary"></i>
-                Settings
+                Perfil
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="../Templates/salir.php">
                 <i class="typcn typcn-eject text-primary"></i>
-                Logout
+                Salir
               </a>
             </div>
           </li>
@@ -100,12 +100,6 @@
               </a>
               
             </div>
-          </li>
-          <li class="nav-item nav-date dropdown">
-            <a class="nav-link d-flex justify-content-center align-items-center" href="../Templates/salir.php">
-
-              <i class="typcn  typcn-eject"></i>
-            </a>
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

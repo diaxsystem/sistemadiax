@@ -7,9 +7,9 @@
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
-              <p class="mb-0">Inicio</p>
+              <p class="mb-0">Sistema Diax</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Panel Principal</p>
+              <p class="mb-0">Sistema web en Desarrollo</p>
             </div>
           </li>
         </ul>
@@ -47,7 +47,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">
+            <a class="nav-link" href="../Templates/dashboard.php">
               <i class="typcn typcn-device-desktop menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -153,6 +153,7 @@
                 <li class="nav-item"> <a class="nav-link" href="../Extension/pedidoMedicos.php">Medicos</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Extension/pedidoGastos.php">Gastos</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Templates/medicos.php">Ordenes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/movimientosEliminados.php">Movimientos</a></li>
               </ul>
             </div>
           </li>
@@ -179,6 +180,20 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Templates/gastos.php"> Lista de Gastos </a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Templates/gastosCancelados.php"> Gastos Cancelados </a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#financiero" aria-expanded="false" aria-controls="financiero">
+              <i class="typcn typcn-clipboard menu-icon"></i>
+              <span class="menu-title">Mov. Financiero</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="financiero">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../Templates/movimientosFinacieros.php"> Lista de Movimientos </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/gastosCancelados.php"> Rendición Mensual </a></li>
               </ul>
             </div>
           </li>
