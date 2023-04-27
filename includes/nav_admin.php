@@ -193,7 +193,7 @@
             <div class="collapse" id="financiero">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Templates/movimientosFinacieros.php"> Lista de Movimientos </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../Templates/gastosCancelados.php"> Rendición Mensual </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/dashboardFinaciero.php"> Rendición Mensual </a></li>
               </ul>
             </div>
           </li>
