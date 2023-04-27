@@ -3,16 +3,16 @@
 
 require_once("../Models/conexion.php");
 
-
 $fecha_desde = '';
 $fecha_hasta  = '';
 $hoy = date("Y-m-d");
 
 
 if (empty($_POST['fecha_desde']) && empty($_POST['fecha_hasta']) ) {
+
  
     $sql = mysqli_query($conection, "SELECT g.id,g.descripcion,g.monto,g.created_at
-    FROM gastos g  where created_at LIKE '%".$hoy."%'  AND g.estatus = 1 ");
+    FROM gastos g  where created_at like '%".$hoy."%'  AND g.estatus = 1 ");
 
 }else{ 
 

@@ -90,6 +90,46 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#fabiola" aria-expanded="false" aria-controls="fabiola">
+              <i class="typcn typcn-device-desktop menu-icon"></i>
+              <span class="menu-title">Info. Fabiola</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="fabiola">
+              <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="../Templates/clientes.php">Buscar Paciente</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/clientes.php">Pendientes </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/clientes.php">Rendiciones </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#elena" aria-expanded="false" aria-controls="elena">
+              <i class="typcn typcn-device-desktop menu-icon"></i>
+              <span class="menu-title">Info. Elena</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="elena">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../Templates/clientes.php">Buscar Paciente</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/clientes.php">Pendientes </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/clientes.php">Rendiciones </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#comprobantes" aria-expanded="false" aria-controls="comprobantes">
+              <i class=" typcn typcn-clipboard menu-icon"></i>
+              <span class="menu-title">Comprobantes</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="comprobantes">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../Templates/orden.php"> Registro de Paciente </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="typcn typcn-group-outline menu-icon"></i>
               <span class="menu-title">Medicos</span>
@@ -132,7 +172,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
               <i class="typcn typcn-clipboard menu-icon"></i>
-              <span class="menu-title">Gasto Recepción</span>
+              <span class="menu-title">Gasto Diax</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="error">
@@ -142,6 +182,7 @@
               </ul>
             </div>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="https://bootstrapdash.com/demo/polluxui-free/docs/documentation.html">
               <i class="typcn typcn-mortar-board menu-icon"></i>
