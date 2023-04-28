@@ -77,7 +77,7 @@
 
             <?php
                 $diferencia = 0;
-                $diferencia = $ingreso - $egreso;
+                $diferencia = (int)$ingreso - (int)$egreso;
             ?>
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
@@ -121,7 +121,7 @@
                                     <?php
                                        $sql = mysqli_query($conection, "SELECT c.id,c.forma_pago,c.nro_cheque,c.tipo_salida,
                                        c.monto,c.concepto,c.usuario,c.created_at,fecha,c.aprobado,c.observacion
-                                       FROM caja_chica c where  c.estatus = 0 ");
+                                       FROM caja_chica c where  c.estatus = 1 ");
                                   
                                     $resultado = mysqli_num_rows($sql);
                                     $row = 0;
@@ -177,7 +177,7 @@
                                     <?php
                                        $sql = mysqli_query($conection, "SELECT c.id,c.forma_pago,c.nro_cheque,c.tipo_salida,
                                        c.monto,c.concepto,c.usuario,c.created_at,fecha,c.aprobado,c.observacion
-                                       FROM caja_chica c where  c.estatus = 0 ");
+                                       FROM caja_chica c where  c.estatus = 1 ");
                                   
                                     $resultado = mysqli_num_rows($sql);
                                     $row = 0;
