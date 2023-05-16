@@ -4,7 +4,7 @@ require_once('../Models/conexion.php');
 $alert = '';
 
 if (!empty($_POST)) {
-	if (empty($_POST['cedula']) || empty($_POST['nombre']) || empty($_POST['telefono']) || empty($_POST['fecha_nac'])) {
+	if (empty($_POST['cedula']) || empty($_POST['nombre']) || empty($_POST['celular']) || empty($_POST['nacimiento'])) {
 
 		$alert = '<p class = "msg_error">Debe llenar Todos los Campos</p>';
 	} else {
@@ -12,20 +12,21 @@ if (!empty($_POST)) {
 		$id                  = $_POST['id'];
 		$cedula              = $_POST['cedula'];
 		$nombre              = $_POST['nombre'];
-		$telefono            = $_POST['telefono'];
-		$fecha_nac           = $_POST['fecha_nac'];
+		$apellido            = $_POST['apellido'];
+		$celular             = $_POST['celular'];
+		$nacimiento          = $_POST['nacimiento'];
 		$sexo                = $_POST['sexo'];
 
 
 
 		//echo "SELECT * FROM usuario
 
-		//WHERE(usuario = '$user' AND idusuario != $iduser) or (correo = '$email' AND idusuario != $iduser";
+		//WHERE(usuario = '$user' AND id != $iduser) or (correo = '$email' AND id != $iduser";
 		//exit; sirve para ejectuar la consulta en mysql
 		$query = mysqli_query(
 			$conection,
-			"SELECT * FROM usuarios
-				WHERE  idusuario != idusuario"
+			"SELECT * FROM clientes
+				WHERE  id != id"
 		);
 
 		$resultado = mysqli_fetch_array($query);
@@ -35,8 +36,8 @@ if (!empty($_POST)) {
 		$alert = '<p class = "msg_error">El Registro ya existe,ingrese otro</p>';
 	} else {
 
-		$sql_update = mysqli_query($conection, "UPDATE usuarios SET cedula = '$cedula',nombre = '$nombre', telefono = '$telefono',fecha_nac = '$fecha_nac',sexo = '$sexo', estatus = 1
-				WHERE idusuario = $id");
+		$sql_update = mysqli_query($conection, "UPDATE clientes SET cedula = '$cedula',nombre = '$nombre', apellido = '$apellido', celular = '$celular',nacimiento = '$nacimiento',sexo = '$sexo', estatus = 1
+				WHERE id = $id");
 
 		if ($sql_update) {
 
@@ -58,8 +59,8 @@ if (empty($_REQUEST['id'])) {
 
 $id = $_REQUEST['id'];
 
-$sql = mysqli_query($conection, "SELECT u.idusuario,u.cedula,u.nombre,u.fecha_nac,u.sexo,u.telefono
-FROM usuarios u   where u.idusuario = $id AND u.estatus = 1");
+$sql = mysqli_query($conection, "SELECT c.id,c.Cedula,c.Nombre,c.Apellido,c.Celular,c.Sexo,c.Nacimiento 
+FROM clientes c WHERE c.id = $id AND c.estatus = 1");
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
@@ -72,12 +73,13 @@ if ($resultado == 0) {
 	$option = '';
 	while ($data = mysqli_fetch_array($sql)) {
 
-		$id             = $data['idusuario'];
-		$cedula         = $data['cedula'];
-		$nombre         = $data['nombre'];
-		$telefono       = $data['telefono'];
-		$fecha_nac      = $data['fecha_nac'];
-		$sexo           = $data['sexo'];
+		$id             = $data['id'];
+		$cedula         = $data['Cedula'];
+		$nombre         = $data['Nombre'];
+		$apellido       = $data['Apellido'];
+		$celular        = $data['Celular'];
+		$nacimiento     = $data['Nacimiento'];
+		$sexo           = $data['Sexo'];
 	
 
 	}

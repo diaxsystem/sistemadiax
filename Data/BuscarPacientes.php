@@ -10,13 +10,18 @@ $nombre = $_POST['inptudNombre'];
 
 
 if ($cedula && empty($nombre)) {
-    $sql = mysqli_query($conection, "SELECT u.idusuario,u.cedula,u.nombre,u.correo,u.fecha_nac,u.telefono,u.sexo
-    FROM usuarios u  where u.cedula LIKE '".$cedula."' AND u.estatus = 1;");
-} else {
+  
+    $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,c.Nombre as nombre,c.Apellido,c.Celular,c.Sexo,c.Nacimiento 
+    FROM clientes c WHERE  c.cedula LIKE '%".$cedula."%' AND c.estatus = 1");
 
-    $sql = mysqli_query($conection, "SELECT u.idusuario,u.cedula,u.nombre,u.correo,u.fecha_nac,u.telefono,u.sexo
-    FROM usuarios u   where u.nombre LIKE '".$nombre."' AND u.estatus = 1;");
+} else if($nombre && empty($cedula)){
+
+  
+    $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,CONCAT(Nombre, ' ', Apellido) as nombre,c.Celular,c.Sexo,C.Nacimiento 
+    FROM clientes c where nombre LIKE '%".$nombre."%' AND c.estatus = 1");
+  
 }
+
 
 
 $resultado = mysqli_num_rows($sql);
@@ -46,13 +51,13 @@ while ($data = mysqli_fetch_array($sql)) {
         <tbody class="text-center">
             <tr>
 
-            <td>' . $data['cedula'] . '</td>
+            <td>' . $data['Cedula'] . '</td>
             <td>' . $data['nombre'] . '</td>
-            <td>' . $data['telefono'] . '</td>
-            <td>' . $data['sexo'] . '</td>
-            <td>' . $data['fecha_nac'] . '</td>
+            <td>' . $data['Celular'] . '</td>
+            <td>' . $data['Sexo'] . '</td>
+            <td>' . $data['Nacimiento'] . '</td>
             <td>'.
-             '<a href="../View/modificarPaciente.php?id='. $data['idusuario'].' "
+             '<a href="../View/modificarPaciente.php?id='. $data['id'].' "
               class="btn btn-outline-primary" ><i class="fa fa-user-edit"></i> Actualizar</a>' .  '</td>
             </tr>
           </tbody>

@@ -1,6 +1,6 @@
 <?php
-require_once("../includes/header_admin.php");
 require_once("../Controllers/modificarPaciente.php");
+require_once("../includes/header_admin.php");
 ?>
 
 
@@ -26,19 +26,23 @@ require_once("../Controllers/modificarPaciente.php");
                   <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>">
                 </div>
                 <div class="form-group">
-                  <label for="telefono">Telefono :</label>
-                  <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono; ?>">
+                  <label for="apellido">Apellido :</label>
+                  <input type="text" class="form-control" id="apellido" name="apellido" value="<?php echo $apellido; ?>">
+                </div>
+                <div class="form-group">
+                  <label for="celular">Telefono :</label>
+                  <input type="text" class="form-control" id="celular" name="celular" value="<?php echo $celular; ?>">
                 </div>
                 <div class="form-group">
                   <label for="fecha_nac">Fecha Nacimiento :</label>
-                  <input type="text" class="form-control" id="fecha_nac" name="fecha_nac" value="<?php echo $fecha_nac; ?>">
+                  <input type="text" class="form-control" id="nacimiento" name="nacimiento" value="<?php echo $nacimiento; ?>">
                 </div>
                 <div class="form-group">
                   <label for="sexo">Sexo :</label>
                   <input type="text" class="form-control" id="sexo" name="sexo" value="<?php echo $sexo; ?>">
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
-                <a class="btn btn-light" href="../Templates/usuarios.php">Cancelar</a>
+                <a class="btn btn-light" href="../Templates/clientes.php">Cancelar</a>
                 <br>
                 <?php if ($alert != "") {  ?>
                   <div class="btn btn-outline-primary btn-lg w-100 mt-4 mb-0">
