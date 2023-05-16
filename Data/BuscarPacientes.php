@@ -18,7 +18,7 @@ if ($cedula && empty($nombre)) {
 
   
     $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,CONCAT(Nombre, ' ', Apellido) as nombre,c.Celular,c.Sexo,C.Nacimiento 
-    FROM clientes c where nombre LIKE '%".$nombre."%' ");
+    FROM clientes c where nombre LIKE '%$nombre%' ");
   
 }
 
