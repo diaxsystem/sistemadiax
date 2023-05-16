@@ -5,7 +5,7 @@
 require_once("../Models/conexion.php");
 
 
-$cedula = $_POST['inputCedula'];
+$cedula = trim($_POST['inputCedula']);
 $nombre = $_POST['inptudNombre'];
 
 
@@ -27,8 +27,8 @@ if ($cedula && empty($nombre)) {
 $resultado = mysqli_num_rows($sql);
 
 
-if($resultado = 0){
-    echo '<div class="msg-win">No hay paciente con esos Datos.</div>'; 
+if($resultado == 0){
+    echo '<div class="alert alert-danger text-center">No hay paciente con esos Datos.</div>'; 
 }
 
 
