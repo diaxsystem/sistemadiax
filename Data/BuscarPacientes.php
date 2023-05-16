@@ -16,9 +16,9 @@ if ($cedula && empty($nombre)) {
 
 } else if($nombre && empty($cedula)){
 
-  
+
     $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,c.Nombre,c.Apellido,c.Celular,c.Sexo,C.Nacimiento 
-    FROM clientes c where c.Nombre LIKE '%".$nombre."%' ");
+    FROM clientes c where c.Nombre LIKE '%$nombre%' ");
   
 }
 
