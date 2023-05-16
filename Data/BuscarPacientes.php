@@ -11,14 +11,14 @@ $nombre = $_POST['inptudNombre'];
 
 if ($cedula && empty($nombre)) {
   
-    $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,c.Nombre as nombre,c.Apellido,c.Celular,c.Sexo,c.Nacimiento 
+    $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,c.Nombre,c.Apellido,c.Celular,c.Sexo,c.Nacimiento 
     FROM clientes c WHERE  c.cedula LIKE '%".$cedula."%' ");
 
 } else if($nombre && empty($cedula)){
 
   
-    $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,CONCAT(Nombre, ' ', Apellido) as nombre,c.Celular,c.Sexo,C.Nacimiento 
-    FROM clientes c where nombre LIKE '%$nombre%' ");
+    $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,c.Nombre,c.Apellido,c.Celular,c.Sexo,C.Nacimiento 
+    FROM clientes c where c.Nombre LIKE '%".$nombre."%' ");
   
 }
 
@@ -52,7 +52,7 @@ while ($data = mysqli_fetch_array($sql)) {
             <tr>
 
             <td>' . $data['Cedula'] . '</td>
-            <td>' . $data['nombre'] . '</td>
+            <td>' . $data['Nombre'] . '</td>
             <td>' . $data['Celular'] . '</td>
             <td>' . $data['Sexo'] . '</td>
             <td>' . $data['Nacimiento'] . '</td>
