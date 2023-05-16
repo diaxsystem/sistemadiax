@@ -12,13 +12,13 @@ $nombre = $_POST['inptudNombre'];
 if ($cedula && empty($nombre)) {
   
     $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,c.Nombre as nombre,c.Apellido,c.Celular,c.Sexo,c.Nacimiento 
-    FROM clientes c WHERE  c.cedula LIKE '%".$cedula."%' AND c.estatus = 1");
+    FROM clientes c WHERE  c.cedula LIKE '%".$cedula."%' ");
 
 } else if($nombre && empty($cedula)){
 
   
     $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,CONCAT(Nombre, ' ', Apellido) as nombre,c.Celular,c.Sexo,C.Nacimiento 
-    FROM clientes c where nombre LIKE '%".$nombre."%' AND c.estatus = 1");
+    FROM clientes c where nombre LIKE '%".$nombre."%' ");
   
 }
 
