@@ -14,9 +14,9 @@
       if ($resultado == 0) {
         header("location: ../Templates/dashboardFinaciero.php");
       }else{
-        $option = '';
+        $montoIngreso = 0;
         while ($data = mysqli_fetch_array($sql)) {
-          
+             $montoIngreso = $data['monto'];
               $ingreso = number_format($data['monto'], 0,'.','.');
                   
         }
@@ -52,9 +52,9 @@
       if ($resultado == 0) {
         header("location: ../Plantillas/caja_chica.php");
       }else{
-        $option = '';
+        $montoEgreso = 0;
         while ($data = mysqli_fetch_array($sql)) {
-          
+              $montoEgreso = $data['monto'];
               $egreso = number_format($data['monto'], 0,'.','.');
                   
         }
@@ -77,7 +77,7 @@
 
             <?php
                 $diferencia = 0;
-                $diferencia = (int)$ingreso - (int)$egreso;
+                $diferencia = (int)$montoIngreso - (int)$montoEgreso;
             ?>
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
@@ -85,7 +85,7 @@
                   <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
                     <div>
                       <p class="mb-2 text-md-center text-lg-left">Diferencia Total</p>
-                      <h1 class="mb-0"><?php echo number_format($diferencia, 3,'.','.'); ?> .GS</h1>
+                      <h1 class="mb-0"><?php echo number_format($diferencia, 0,'.','.'); ?> .GS</h1>
                     </div>
                     <i class="typcn typcn-calculator icon-xl text-secondary"></i>
                   </div>
@@ -136,7 +136,7 @@
                                                 <td><?php echo $data['forma_pago']; ?></td>
                                                 <td><?php echo $data['nro_cheque']; ?></td>
                                                 <td><?php echo $data['tipo_salida']; ?></td>
-                                                <td><?php echo number_format($data['monto'],0,'.','.'); ?></td>
+                                                <td><?php echo number_format($data['monto'],3,'.','.'); ?></td>
                                                 <td><?php echo $data['concepto'] ?></td>
                                                 
                                             </tr>
