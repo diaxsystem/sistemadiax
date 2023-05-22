@@ -83,7 +83,7 @@ if ($resultado == 0) {
         $forma_pago    = $data['forma_pago'];
         $nro_cheque    = $data['nro_cheque'];
         $tipo_salida   = $data['tipo_salida'];
-        $monto         = number_format($data['monto'], 3,'.','.');
+        $monto         = $data['monto'];
         $concepto      = $data['concepto'];
         $fecha         = $data['fecha'];
 

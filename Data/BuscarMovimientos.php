@@ -50,7 +50,7 @@ echo '
     $monto = 0;
     $num = 0;
   while ($data = mysqli_fetch_array($sql)){
-    $monto += $data['monto'];
+    $monto += (int)$data['monto'];
     $num++;
     echo '<tr>
              <td>'. $num.'</td>
@@ -58,7 +58,7 @@ echo '
              <td>'. $data['forma_pago']. '</td>
              <td>'. $data['nro_cheque']. '</td>
              <td>'. $data['tipo_salida']. '</td>
-             <td>'. $data['monto']. '</td>
+             <td>'.number_format($data['monto'],0,'.','.'). '</td>
              <td>'. $data['concepto']. '</td>
              <td>'. $data['usuario']. '</td>
              <td>
@@ -82,7 +82,7 @@ echo '
       <td></td>
       <td></td>
       <td></td>
-      <td class="text-center alert alert-success">'.number_format($monto, 3, '.', '.').'.<b>GS</b></td>
+      <td class="text-center alert alert-success">'.number_format($monto, 0, '.', '.').'.<b>GS</b></td>
       
       
     </tr>

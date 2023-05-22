@@ -14,7 +14,7 @@ if (!empty($_POST)) {
         $forma_pago    = $_POST['forma_pago'];
         $nro_cheque    = $_POST['nro_cheque'];
         $tipo_salida   = $_POST['tipo_salida'];
-        $monto         = number_format($_POST['monto'], 3,'.','.');
+        $monto         =$_POST['monto'];
         $concepto      = trim($_POST['concepto']);
         $usuario       = $_POST['usuario'];
         $fecha         = $_POST['fecha'];

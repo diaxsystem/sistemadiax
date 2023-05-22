@@ -12,12 +12,12 @@
       $resultado = mysqli_num_rows($sql);
       
       if ($resultado == 0) {
-        header("location: ../Plantillas/caja_chica.php");
+        header("location: ../Templates/dashboardFinaciero.php");
       }else{
         $option = '';
         while ($data = mysqli_fetch_array($sql)) {
           
-              $ingreso = number_format($data['monto'], 3,'.','.');
+              $ingreso = number_format($data['monto'], 0,'.','.');
                   
         }
       }
@@ -55,7 +55,7 @@
         $option = '';
         while ($data = mysqli_fetch_array($sql)) {
           
-              $egreso = number_format($data['monto'], 3,'.','.');
+              $egreso = number_format($data['monto'], 0,'.','.');
                   
         }
       }
@@ -121,7 +121,7 @@
                                     <?php
                                        $sql = mysqli_query($conection, "SELECT c.id,c.forma_pago,c.nro_cheque,c.tipo_salida,
                                        c.monto,c.concepto,c.usuario,c.created_at,fecha,c.aprobado,c.observacion
-                                       FROM caja_chica c where  c.estatus = 1 ");
+                                       FROM caja_chica c where tipo_salida LIKE '%Ingreso%' AND c.estatus = 1 ");
                                   
                                     $resultado = mysqli_num_rows($sql);
                                     $row = 0;
@@ -136,7 +136,7 @@
                                                 <td><?php echo $data['forma_pago']; ?></td>
                                                 <td><?php echo $data['nro_cheque']; ?></td>
                                                 <td><?php echo $data['tipo_salida']; ?></td>
-                                                <td><?php echo $data['monto']; ?></td>
+                                                <td><?php echo number_format($data['monto'],0,'.','.'); ?></td>
                                                 <td><?php echo $data['concepto'] ?></td>
                                                 
                                             </tr>
@@ -177,7 +177,7 @@
                                     <?php
                                        $sql = mysqli_query($conection, "SELECT c.id,c.forma_pago,c.nro_cheque,c.tipo_salida,
                                        c.monto,c.concepto,c.usuario,c.created_at,fecha,c.aprobado,c.observacion
-                                       FROM caja_chica c where  c.estatus = 1 ");
+                                       FROM caja_chica c where tipo_salida LIKE '%Egreso%' AND c.estatus = 1 ");
                                   
                                     $resultado = mysqli_num_rows($sql);
                                     $row = 0;
@@ -192,7 +192,63 @@
                                                 <td><?php echo $data['forma_pago']; ?></td>
                                                 <td><?php echo $data['nro_cheque']; ?></td>
                                                 <td><?php echo $data['tipo_salida']; ?></td>
-                                                <td><?php echo $data['monto']; ?></td>
+                                                <td><?php echo number_format($data['monto'],0,'.','.'); ?></td>
+                                                <td><?php echo $data['concepto'] ?></td>
+                                                
+                                            </tr>
+
+
+                                    <?php }
+                                    } ?>
+                                </tbody>
+                            </table>
+                </div>
+              </div>
+            </div>
+          </div>
+<!---Fin de la tabla-------------------------------------------->
+<hr>
+<!---Tabla de los pacientes que deriven de la consulta de DIAX--->
+<div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="titulos col-md-2">
+                <h4>Deposito</h4>
+                </div>
+                <div class="table-responsive pt-3">
+                <table class="table table-bordered" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Nro</th>
+                                        <th>Fecha de Movimiento</th>
+                                        <th>Forma de Pago</th>
+                                        <th>Nro Cheque/ Transferencia</th>
+                                        <th>Tipo de Movimiento</th>
+                                        <th>Monto</th>
+                                        <th>Concepto</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                       $sql = mysqli_query($conection, "SELECT c.id,c.forma_pago,c.nro_cheque,c.tipo_salida,
+                                       c.monto,c.concepto,c.usuario,c.created_at,fecha,c.aprobado,c.observacion
+                                       FROM caja_chica c where tipo_salida LIKE '%Deposito%' AND c.estatus = 1 ");
+                                  
+                                    $resultado = mysqli_num_rows($sql);
+                                    $row = 0;
+                                    if ($resultado > 0) {
+                                        while ($data = mysqli_fetch_array($sql)) {
+                                            $row++;
+                                    ?>
+                                            <tr class="text-center">
+
+                                                <td><?php echo $row; ?></td>
+                                                <td><?php echo $data['fecha']; ?></td>
+                                                <td><?php echo $data['forma_pago']; ?></td>
+                                                <td><?php echo $data['nro_cheque']; ?></td>
+                                                <td><?php echo $data['tipo_salida']; ?></td>
+                                                <td><?php echo number_format($data['monto'],0,'.','.'); ?></td>
                                                 <td><?php echo $data['concepto'] ?></td>
                                                 
                                             </tr>
@@ -208,5 +264,4 @@
           </div>
 <!---Fin de la tabla-------------------------------------------->
 
-<!---Fin de la tabla-------------------------------------------->
 <?php include('../includes/footer_admin.php');?>
