@@ -136,7 +136,7 @@
                                                 <td><?php echo $data['forma_pago']; ?></td>
                                                 <td><?php echo $data['nro_cheque']; ?></td>
                                                 <td><?php echo $data['tipo_salida']; ?></td>
-                                                <td><?php echo number_format($data['monto'],3,'.','.'); ?></td>
+                                                <td><?php echo number_format($data['monto'],0,'.','.'); ?></td>
                                                 <td><?php echo $data['concepto'] ?></td>
                                                 
                                             </tr>
