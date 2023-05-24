@@ -27,45 +27,37 @@ require_once('../Models/conexion.php');
                             <table class="table table-bordered" id="tabla">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Nombre</th>
+                                    <th>ID</th>
+                                        <th>Estudio</th>
                                         <th>Sin Seguro</th>
-                                        <th>Semei</th>
                                         <th>Semei Preferencial</th>
-                                        <th>Seguros</th>
-                                        <th>Seguros Preferencial</th>
                                         <th>Hospitalario</th>
                                      
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = mysqli_query($conection, "SELECT t.id,t.Estudio,t.SinSeguro,t.SEMEI,t.SemeiPref,t.Seguros,t.SegurosPref,t.Hospitalar 
-                        FROM tarifas t where estatus = 0 ORDER BY  t.id DESC");
-
-                                    $resultado = mysqli_num_rows($sql);
-
-                                    if ($resultado > 0) {
-                                        while ($ver = mysqli_fetch_array($sql)) {
-                                            $datos = $ver[0];
-                                            $ver[1];
-                                            $ver[2];
-                                            $ver[3];
-                                            $ver[4];
-                                            $ver[5];
-                                            $ver[6];
-                                            $ver[7];
-                                    ?>
-                                            <tr class="text-center">
-
-                                                <td><?= $ver[0]; ?></td>
-                                                <td><?= $ver[1]; ?></td>
-                                                <td><?= $ver[2]; ?></td>
-                                                <td><?= $ver[3]; ?></td>
-                                                <td><?= $ver[4]; ?></td>
-                                                <td><?= $ver[5]; ?></td>
-                                                <td><?= $ver[6]; ?></td>
-                                                <td><?= $ver[7]; ?></td>
+                                     $sql = mysqli_query($conection, "SELECT t.id,t.Estudio,t.SinSeguro,t.SegurosPref,t.Hospitalar 
+                                     FROM tarifas t where estatus = 1 ORDER BY  t.id DESC");
+             
+                                                 $resultado = mysqli_num_rows($sql);
+             
+                                                 if ($resultado > 0) {
+                                                     while ($ver = mysqli_fetch_array($sql)) {
+                                                         $datos = $ver[0];
+                                                         $ver[1];
+                                                         $ver[2];
+                                                         $ver[3];
+                                                         $ver[4];
+             
+                                                 ?>
+                                                         <tr class="text-center">
+             
+                                                             <td><?= $ver[0]; ?></td>
+                                                             <td><?= $ver[1]; ?></td>
+                                                             <td><?= $ver[2]; ?></td>
+                                                             <td><?= $ver[3]; ?></td>
+                                                             <td><?= $ver[4]; ?></td>
                                             </tr>
 
 
