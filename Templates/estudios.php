@@ -28,12 +28,9 @@ require_once('../Models/conexion.php');
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Nombre</th>
+                                        <th>Estudio</th>
                                         <th>Sin Seguro</th>
-                                        <th>Semei</th>
                                         <th>Semei Preferencial</th>
-                                        <th>Seguros</th>
-                                        <th>Seguros Preferencial</th>
                                         <th>Hospitalario</th>
                                         <?php if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) { ?>
                                             <th>Editar</th>
@@ -41,9 +38,10 @@ require_once('../Models/conexion.php');
                                         <?php } ?>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     <?php
-                                    $sql = mysqli_query($conection, "SELECT t.id,t.Estudio,t.SinSeguro,t.SEMEI,t.SemeiPref,t.Seguros,t.SegurosPref,t.Hospitalar 
+                                    $sql = mysqli_query($conection, "SELECT t.id,t.Estudio,t.SinSeguro,t.SegurosPref,t.Hospitalar 
                         FROM tarifas t where estatus = 1 ORDER BY  t.id DESC");
 
                                     $resultado = mysqli_num_rows($sql);
@@ -55,9 +53,7 @@ require_once('../Models/conexion.php');
                                             $ver[2];
                                             $ver[3];
                                             $ver[4];
-                                            $ver[5];
-                                            $ver[6];
-                                            $ver[7];
+
                                     ?>
                                             <tr class="text-center">
 
@@ -66,10 +62,6 @@ require_once('../Models/conexion.php');
                                                 <td><?= $ver[2]; ?></td>
                                                 <td><?= $ver[3]; ?></td>
                                                 <td><?= $ver[4]; ?></td>
-                                                <td><?= $ver[5]; ?></td>
-                                                <td><?= $ver[6]; ?></td>
-                                                <td><?= $ver[7]; ?></td>
-
                                                 <?php if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) { ?>
                                                     <td>
                                                         <a href="../View/modificarEstudios.php?id=<?php echo $ver[0]; ?>" class="btn btn-outline-info" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px  rgba(0, 0, 0, 0.25);"><i class="typcn typcn-edit"></i></a>

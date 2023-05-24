@@ -17,6 +17,7 @@ require_once('../Controllers/grabarEstudio.php');
               </p>
               <form class="forms-sample" method="POST" action="">
               <div class="form-group">
+              <div class="form-group">
                   <label class="control-label">Estudio</label>
                   <input class="form-control" type="text" name="Estudio" id="Estudio" placeholder="Ingrese el Estudio" required>
                 </div>
@@ -26,24 +27,11 @@ require_once('../Controllers/grabarEstudio.php');
                     <input class="form-control" type="text" name="SinSeguro" id="SinSeguro" placeholder="Ingrese el monto" required>
                   </div>
 
-                 <div class="form-group">
-                    <label class="control-label">Semei</label>
-                    <input class="form-control" type="text" name="SEMEI" id="SEMEI" placeholder="Ingrese el monto" required>
-                </div>
 
 
                 <div class="form-group">
                   <label class="control-label">Precio Preferencial</label>
                   <input class="form-control" type="text" name="SemeiPref" id="SemeiPref" placeholder="Ingrese el monto" required>
-                </div>
-               
-                <div class="form-group">
-                  <label class="control-label">Seguros</label>
-                  <input class="form-control" type="text" name="Seguros" id="Seguros"  placeholder="Ingrese el monto" required>
-                </div>
-                <div class="form-group">
-                  <label class="control-label">Seguros Preferencial</label>
-                  <input class="form-control" type="text"  name="SegurosPref" id="SegurosPref"  placeholder="Ingrese el monto" required>
                 </div>
 
                 <div class="form-group">

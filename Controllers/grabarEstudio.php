@@ -4,9 +4,9 @@
 require_once("../Models/conexion.php");
 $alert = '';
 if (!empty($_POST)) {
-	
+	$alert = '';
 
-	if (empty($_POST['Estudio']) || empty($_POST['SinSeguro']) || empty($_POST['SEMEI']) || empty($_POST['SemeiPref']) || empty($_POST['Seguros']) || empty($_POST['SegurosPref'])) {
+	if (empty($_POST['Estudio']) || empty($_POST['SinSeguro'])  || empty($_POST['SemeiPref'])) {
 
 		$alert = '<p class = "msg_error">Debe llenar Todos los Campos</p>';
 
@@ -14,10 +14,7 @@ if (!empty($_POST)) {
 
 		$Estudio       = $_POST['Estudio'];
 		$SinSeguro     = $_POST['SinSeguro'];
-		$SEMEI         = $_POST['SEMEI'];
 		$SemeiPref     = $_POST['SemeiPref'];
-		$Seguros       = $_POST['Seguros'];
-		$SegurosPref   = $_POST['SegurosPref'];
 		$Hospitalar    = $_POST['Hospitalar'];
 		$estatus       = $_POST['estatus'];
 		
@@ -30,8 +27,8 @@ if (!empty($_POST)) {
 
 
 
-			$query_insert = mysqli_query($conection,"INSERT INTO tarifas(Estudio,SEMEI,SinSeguro,SegurosPref,SemeiPref,Seguros,Hospitalar,estatus)
-				VALUES('$Estudio','$SEMEI','$SinSeguro','$SegurosPref','$SemeiPref','$Seguros','$Hospitalar','$estatus')");
+			$query_insert = mysqli_query($conection,"INSERT INTO tarifas(Estudio,SinSeguro,SemeiPref,Hospitalar,estatus)
+				VALUES('$Estudio','$SinSeguro','$SemeiPref','$Hospitalar','$estatus')");
 
 			if ($query_insert ) {
 				$alert = '<p class = "msg_save">Registro Guardado Correctamente</p>';

@@ -15,8 +15,8 @@ require_once('../Controllers/modificarEstudios.php');
               <p class="card-description text-center">
                 Datos del estudio a modificar
               </p>
-              <form class="forms-sample" method="POST" action="">
-              <input type="hidden" name="id" id="id" value="<?php echo $_REQUEST['id']; ?>">
+              <form action="" method="POST">
+                  <input type="hidden" name="id" id="id" value="<?php echo $_REQUEST['id']; ?>">
                 <div class="form-group">
                   <input class="form-control" type="hidden" name="Estudio" id="Estudio" placeholder="Ingrese el Estudio" 
                    value="<?php echo $Estudio; ?>">
@@ -33,35 +33,21 @@ require_once('../Controllers/modificarEstudios.php');
                   value="<?php echo $SinSeguro; ?>">
                 </div>
 
-                <div class="form-group">
-                  <label class="control-label">Semei</label>
-                  <input class="form-control" type="text" name="SEMEI" id="SEMEI" placeholder="Ingrese el monto" required
-                  value="<?php echo $SEMEI; ?>">
-                </div>
+              
 
                 <div class="form-group">
                   <label class="control-label">Precio Preferencial</label>
-                  <input class="form-control" type="text" name="SemeiPref" id="SemeiPref" placeholder="Ingrese el monto" required
-                  value="<?php echo $SemeiPref; ?>">
-                </div>
-
-                <div class="form-group">
-                  <label class="control-label">Seguros</label>
-                  <input class="form-control" type="text" name="Seguros" id="Seguros" placeholder="Ingrese el monto" required 
-                  value="<?php echo $Seguros; ?>">
-                </div>
-
-                <div class="form-group">
-                  <label class="control-label">Seguros Preferencial</label>
-                  <input class="form-control" type="text" name="SegurosPref" id="SegurosPref" placeholder="Ingrese el monto" required 
+                  <input class="form-control" type="text" name="SegurosPref" id="SegurosPref" placeholder="Ingrese el monto" required
                   value="<?php echo $SegurosPref; ?>">
                 </div>
+
 
                 <div class="form-group">
                   <label class="control-label">Precio Hospitalarios</label>
                   <input class="form-control" type="text" name="Hospitalar" id="Hospitalar" placeholder="Ingrese el monto"
                   value="<?php echo $Hospitalar; ?>">
                 </div>
+
                 <button type="submit" class="btn btn-primary mr-2">Registrar</button>
                 <a class="btn btn-light" href="../Templates/estudios.php">Cancelar</a>
                 <br>
