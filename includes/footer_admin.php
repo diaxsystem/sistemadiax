@@ -23,6 +23,8 @@
 
 </html>
 
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/funciones.js"></script>
 <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="../assets/vendors/chart.js/Chart.min.js"></script>
 <script src="../assets/js/off-canvas.js"></script>
