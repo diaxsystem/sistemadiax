@@ -3,10 +3,10 @@ require_once("../includes/header_admin.php");
 
 if ($_SESSION['rol'] == 1 ) {
     if (empty($_SESSION['active'])) {
-        header('location: salir.php');
+        header('location: ../Templates/salir.php');
     }
 } else {
-    header('location: salir.php');
+    header('location: ../Templates/salir.php');
 }
 
 require_once('../Models/conexion.php');

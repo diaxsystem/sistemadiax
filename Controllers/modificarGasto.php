@@ -18,6 +18,7 @@ $alert = '';
 			$id              = $_POST['id'];
 			$descripcion     = $_POST['descripcion'];
 			$monto           = $_POST['monto'];
+			$created_at      = $_POST['created_at'];
 					
 	
 	
@@ -39,7 +40,7 @@ $alert = '';
 	
 		}else{
 	
-			$sql_update = mysqli_query($conection,"UPDATE gastos SET descripcion = '$descripcion',monto = '$monto'
+			$sql_update = mysqli_query($conection,"UPDATE gastos SET descripcion = '$descripcion',monto = '$monto', created_at = '$created_at'
 				WHERE id = $id");
 	
 			if ($sql_update) {
@@ -79,6 +80,7 @@ if ($resultado == 0) {
 		$id           = $data['id'];
 		$descripcion  = $data['descripcion'];
 		$monto        = $data['monto'];
+		$created_at   = $data['created_at'];
 		
 
 	}

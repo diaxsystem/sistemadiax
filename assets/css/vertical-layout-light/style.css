@@ -19279,8 +19279,8 @@ code {
 .titulos{
   border: 1px solid #0050e3;
   border-radius: 3px;
-  background-color: #0050e3;
-  color: #fff;
+  background-color: trasnparent;
+  color: #0050e3;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px  rgba(0, 0, 0, 0.25);
   font-size: 12px;
 }

@@ -26,15 +26,11 @@ if($rq == 1){
 }elseif($rq == 6) {
 	$respuesta = $oMysql->getMontoTotal();
 }elseif($rq == 7) {
-	$respuesta = $oMysql->getNofificacionesPendientes();
+	$respuesta = $oMysql->getEliminacionOrdenes();
 }elseif($rq == 8) {
-	$respuesta = $oMysql->getMedicos();
+	$respuesta = $oMysql->getEliminacionGasto();
 }elseif($rq == 9) {
-	$respuesta = $oMysql->getMedicosPen();
-}elseif($rq == 10) {
-	$respuesta = $oMysql->getGastos();
-}elseif($rq == 11) {
-	$respuesta = $oMysql->getGastosPen();
+	$respuesta = $oMysql->getEliminacionMedico();
 }
 echo $respuesta;
 

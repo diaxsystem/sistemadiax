@@ -23,8 +23,11 @@
 
 </html>
 
-<script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../js/funciones.js"></script>
+<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/js/sweetalert2.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../assets/js/dataTables.bootstrap.min.js"></script>
 <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="../assets/vendors/chart.js/Chart.min.js"></script>
 <script src="../assets/js/off-canvas.js"></script>
@@ -32,34 +35,34 @@
 <script src="../assets/js/template.js"></script>
 <script src="../assets/js/settings.js"></script>
 <script src="../assets/js/todolist.js"></script>
-<script src="../assets/js/dashboard.js"></script>
+<script src="../js/funciones.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-    tabla = $("#tabla").DataTable({
-       "columnDefs":[{
-        "target": 1,
-        "data":null
-       }],
-        
-        //Para cambiar el lenguaje a español
-    "language": {
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "zeroRecords": "No se encontraron resultados",
-            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-            "sSearch": "Buscar:",
-            "oPaginate": {
-                "sFirst": "1",
-                "sLast":">>",
-                "sNext":">",
-                "sPrevious": "<"
-             },
-             "sProcessing":"Procesando...",
-        }
-    });
+    $(document).ready(function() {
+        tabla = $("#tabla").DataTable({
+            "columnDefs": [{
+                "target": 1,
+                "data": null
+            }],
 
-      
-    
-});
+            //Para cambiar el lenguaje a español
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros",
+                "zeroRecords": "No se encontraron resultados",
+                "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sSearch": "Buscar:",
+                "oPaginate": {
+                    "sFirst": "1",
+                    "sLast": ">>",
+                    "sNext": ">",
+                    "sPrevious": "<"
+                },
+                "sProcessing": "Procesando...",
+            }
+        });
+
+
+
+    });
 </script>

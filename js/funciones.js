@@ -135,8 +135,8 @@ Swal.fire({
 /*toast: true,*/
 position: 'bottom-end',
 title: 'Solicitud Nueva!',
-text: 'Tiene un nuevo Pedido de cancelación de gastos',
-imageUrl: '../images/logo.png',
+text: 'Tiene un nuevo Pedido de cancelación de Orden',
+imageUrl: '../assets/images/logo.png',
 imageWidth: 150,
 imageHeight: 70,
 imageAlt: 'Custom image',
@@ -176,8 +176,8 @@ Swal.fire({
 /*toast: true,*/
 position: 'bottom-end',
 title: 'Solicitud Nueva!',
-text: 'Tiene un pedido nuevo de Eliminación de medico',
-imageUrl: '../images/logo.png',
+text: 'Tiene un pedido nuevo de Eliminación de Gasto',
+imageUrl: '../assets/images/logo.png',
 imageWidth: 150,
 imageHeight: 70,
 imageAlt: 'Custom image',
@@ -201,7 +201,7 @@ statusCode:{
 url:'../Libraries/servidor.php',
 method:'POST',
 data:{
-    rq:"10"
+    rq:"9"
 }
 }).done(function(datos){
 //Logica de respuesta  de los datos
@@ -216,8 +216,8 @@ Swal.fire({
 /*toast: true,*/
 position: 'bottom-end',
 title: 'Solicitud Nueva!',
-text: 'Tiene un pedido nuevo de Eliminación de gastos',
-imageUrl: '../images/logo.png',
+text: 'Tiene un pedido nuevo de Eliminación de medico',
+imageUrl: '../assets/images/logo.png',
 imageWidth: 150,
 imageHeight: 70,
 imageAlt: 'Custom image',

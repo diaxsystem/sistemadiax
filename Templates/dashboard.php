@@ -104,7 +104,7 @@ require_once("../includes/header_admin.php");
             <h3>Lista Paz</h3>
           </div>
           <div class="table-responsive pt-3">
-            <table class="table table-striped project-orders-table">
+            <table class="table table-striped project-orders-table text-center">
               <thead>
                 <tr>
                   <th class="ml-5">Nro</th>
@@ -156,13 +156,13 @@ require_once("../includes/header_admin.php");
 
 
                  
-                  <td>
+                    <td>
                     <div class="d-flex align-items-center">
                       
-                      <button type="button" class="btn btn-danger btn-sm btn-icon-text">
+                      <a href="../View/cancelarOrden.php?id=<?php echo $data['id']; ?>" type="button"  class="btn btn-danger btn-sm btn-icon-text">
                         Anular
                         <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                      </button>
+                      </a>
                     </div>
                   </td>
                 </tr>
@@ -184,11 +184,14 @@ require_once("../includes/header_admin.php");
     <div class="row">
       <div class="col-md-12">
         <div class="card">
-          <div class="titulos col-md-2">
-            <h3>Lista Diax</h3>
+          <div class="titulos col-md-3">
+            <h3>Lista Diax <a class="btn btn-danger" href="../Reports/reporteDashboardDiario.php" target="_blank" rel="noopener noreferrer">
+            <i class="typcn typcn-user-add"></i> Reporte PDF
+           </a></h3>
+            
           </div>
           <div class="table-responsive pt-3">
-            <table class="table table-striped project-orders-table">
+            <table class="table table-striped project-orders-table text-center">
               <thead>
                 <tr>
                   <th class="ml-5">Nro</th>
@@ -243,10 +246,10 @@ require_once("../includes/header_admin.php");
                   <td>
                     <div class="d-flex align-items-center">
                       
-                      <button type="button" class="btn btn-danger btn-sm btn-icon-text">
+                      <a href="../View/cancelarOrden.php?id=<?php echo $data['id']; ?>" type="button"  class="btn btn-danger btn-sm btn-icon-text">
                         Anular
                         <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                      </button>
+                      </a>
                     </div>
                   </td>
                 </tr>
@@ -272,7 +275,7 @@ require_once("../includes/header_admin.php");
             <h4>Gastos Diarios</h4>
           </div>
           <div class="table-responsive pt-3">
-            <table class="table table-striped project-orders-table">
+            <table class="table table-striped project-orders-table text-center">
               <thead>
                 <tr>
                   <th class="ml-5">ID</th>
@@ -310,7 +313,7 @@ require_once("../includes/header_admin.php");
                     <div class="d-flex align-items-center">
                       
                       <button type="button" class="btn btn-info btn-sm btn-icon-text">
-                        Anular
+                        Editar
                         <i class="typcn typcn-edit btn-icon-append"></i>
                       </button>
                     </div>
@@ -357,3 +360,5 @@ require_once("../includes/header_admin.php");
     </div>
     <!---Fin de la tabla-------------------------------------------->
     <?php include('../includes/footer_admin.php'); ?>
+   
+

@@ -38,7 +38,7 @@ class MYSQL {
 		$fecha =  date('d-m-Y');
 		// $anio =  date('Y');
 		try{
-			$strQuery = "SELECT count(*) tpacientes  FROM historial  where Fecha LIKE '%$fecha%' AND Atendedor like '%PAZ%'";
+			$strQuery = "SELECT count(*) tpacientes  FROM historial  where Fecha LIKE '%$fecha%' AND Atendedor like '%PAZ%' AND estatus = 1";
 			//$strQuery = "SELECT COUNT(*) from clientes WHERE year(FechaIngreso)= $anio AND month(FechaIngreso)= $mes ";
 			if($this->conexBDPDO()){
 				$pQuery =$this->oConBD->prepare($strQuery);
@@ -57,7 +57,7 @@ class MYSQL {
 		$fecha =  date('d-m-Y');
 		// $anio =  date('Y');
 		try{
-			$strQuery = "SELECT count(*) tpacientes  FROM historial  where Fecha LIKE '%$fecha%' AND Atendedor like '%DIAX%'";
+			$strQuery = "SELECT count(*) tpacientes  FROM historial  where Fecha LIKE '%$fecha%' AND Atendedor like '%DIAX%' AND estatus = 1";
 			//$strQuery = "SELECT COUNT(*) from clientes WHERE year(FechaIngreso)= $anio AND month(FechaIngreso)= $mes ";
 			if($this->conexBDPDO()){
 				$pQuery =$this->oConBD->prepare($strQuery);
@@ -77,7 +77,7 @@ class MYSQL {
 		$fecha  =  date('d-m-Y');
 
 		try{
-			$strQuery = "SELECT count(*) tpacientes  FROM historial where Fecha LIKE '%".$fecha."%' ";
+			$strQuery = "SELECT count(*) tpacientes  FROM historial where Fecha LIKE '%".$fecha."%' AND estatus = 1";
 			if($this->conexBDPDO()){
 				$pQuery =$this->oConBD->prepare($strQuery);
 				$pQuery->execute();
@@ -96,7 +96,7 @@ class MYSQL {
 		$fecha  =  date('d-m-Y');
 
 		try{
-			$strQuery = "SELECT SUM(monto) tmontoDiax  FROM historial  where Fecha LIKE '%$fecha%' AND Atendedor LIKE '%DIAX%'";
+			$strQuery = "SELECT SUM(monto) tmontoDiax  FROM historial  where Fecha LIKE '%$fecha%' AND Atendedor LIKE '%DIAX%' AND estatus = 1";
 			if($this->conexBDPDO()){
 				$pQuery =$this->oConBD->prepare($strQuery);
 				$pQuery->execute();
@@ -115,7 +115,7 @@ class MYSQL {
 		$fecha  =  date('d-m-Y');
 	
 		try{
-			$strQuery = "SELECT SUM(monto) tmontoPaz  FROM historial  where Fecha LIKE '%$fecha%' AND Atendedor LIKE '%PAZ%'";
+			$strQuery = "SELECT SUM(monto) tmontoPaz  FROM historial  where Fecha LIKE '%$fecha%' AND Atendedor LIKE '%PAZ%' AND estatus = 1";
 			if($this->conexBDPDO()){
 				$pQuery =$this->oConBD->prepare($strQuery);
 				$pQuery->execute();
@@ -133,7 +133,7 @@ class MYSQL {
 		$idTotalMonto = 0;
 		$fecha  =  date('d-m-Y');
 		try{
-			$strQuery = "SELECT SUM(monto) tmontoPaz  FROM historial  where Fecha LIKE '%$fecha%'";
+			$strQuery = "SELECT SUM(monto) tmontoTotal  FROM historial  where Fecha LIKE '%$fecha%' AND estatus = 1 ";
 			if($this->conexBDPDO()){
 				$pQuery =$this->oConBD->prepare($strQuery);
 				$pQuery->execute();
@@ -146,10 +146,8 @@ class MYSQL {
 		return $idTotalMonto;
 	}
 
-	public function getNofificacionesPendientes(){
+	public function getEliminacionOrdenes(){
 		$idNotificacionPen = 0;
-		$mes = date('m');
-		$anio = date('Y');
 		try{
 			$strQuery = "SELECT COUNT(*) as tNotificacion FROM historial WHERE estatus = 2";
 			if($this->conexBDPDO()){
@@ -158,32 +156,31 @@ class MYSQL {
 				$idNotificacionPen= $pQuery->fetchColumn();
 			}
 		}catch(PDOException $e){
-			echo "MYSQL.getNofificacionesPendientes: ". $e->getMessage(). "\n";
+			echo "MYSQL.getEliminacionOrdenes: ". $e->getMessage(). "\n";
 			return -1;
 		}
 		return $idNotificacionPen;
 	}
 
-	public function getMedicos(){
-		$idMedicos = 0;
-		$mes = date('m');
-		$anio = date('Y');
+	public function getEliminacionGasto(){
+		$idNotificacioGasto = 0;
+	
 		try{
-			$strQuery = "SELECT COUNT(*) as tNotificacion FROM medicos WHERE estatus = 2";
+			$strQuery = "SELECT COUNT(*) as tNotificacion FROM gastos WHERE estatus = 2";
 			if($this->conexBDPDO()){
 				$pQuery =$this->oConBD->prepare($strQuery);
 				$pQuery->execute();
-				$idMedicos= $pQuery->fetchColumn();
+				$idNotificacioGasto= $pQuery->fetchColumn();
 			}
 		}catch(PDOException $e){
-			echo "MYSQL.getMedicos: ". $e->getMessage(). "\n";
+			echo "MYSQL.getEliminacionGasto: ". $e->getMessage(). "\n";
 			return -1;
 		}
-		return $idMedicos;
+		return $idNotificacioGasto;
 	}
 
-	public function getMedicosPen(){
-		$idMedicosPen = 0;
+	public function getEliminacionMedico(){
+		$idNotificacionMedico = 0;
 		$mes = date('m');
 		$anio = date('Y');
 		try{
@@ -191,13 +188,13 @@ class MYSQL {
 			if($this->conexBDPDO()){
 				$pQuery =$this->oConBD->prepare($strQuery);
 				$pQuery->execute();
-				$idMedicosPen= $pQuery->fetchColumn();
+				$idNotificacionMedico= $pQuery->fetchColumn();
 			}
 		}catch(PDOException $e){
-			echo "MYSQL.getMedicos: ". $e->getMessage(). "\n";
+			echo "MYSQL.getEliminacionMedico: ". $e->getMessage(). "\n";
 			return -1;
 		}
-		return $idMedicosPen;
+		return $idNotificacionMedico;
 	}
 
 	public function getGastos(){

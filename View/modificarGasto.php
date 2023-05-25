@@ -29,6 +29,11 @@ require_once('../Controllers/modificarGasto.php');
                                     <label class="control-label">Monto</label>
                                     <input class="form-control" type="text" name="monto" id="monto" placeholder="Ingrese el monto" required value="<?php echo $monto; ?>">
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">Fecha de Gasto</label>
+                                    <input class="form-control" type="text" name="created_at" id="created_at"  required value="<?php echo $created_at; ?>">
+                                </div>
                                 <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
                                 <a class="btn btn-light" href="../Templates/gastos.php">Cancelar</a>
                                 <br>

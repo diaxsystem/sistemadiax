@@ -126,6 +126,7 @@
             <div class="collapse" id="comprobantes">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Templates/orden.php"> Registro de Paciente </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/ordenCanceladas.php"> Comprobante Cancelados</a></li>
               </ul>
             </div>
           </li>
@@ -152,7 +153,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Extension/pedidoMedicos.php">Medicos</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Extension/pedidoGastos.php">Gastos</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../Templates/medicos.php">Ordenes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Extension/OrdenesPendientes.php">Ordenes</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Templates/movimientosEliminados.php">Movimientos</a></li>
               </ul>
             </div>
