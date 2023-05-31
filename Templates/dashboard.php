@@ -123,57 +123,57 @@ require_once("../includes/header_admin.php");
                 </tr>
               </thead>
               <tbody>
-              <?php
-              // $fecha1 = "05-01-2023";
-              $fecha =  date('d-m-Y');
-              //  echo $fecha1." ".$fecha2;
-              //  exit;
-              $sql = mysqli_query($conection, "SELECT h.id,c.nombre,c.apellido,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
+                <?php
+                // $fecha1 = "05-01-2023";
+                $fecha =  date('d-m-Y');
+                //  echo $fecha1." ".$fecha2;
+                //  exit;
+                $sql = mysqli_query($conection, "SELECT h.id,c.nombre,c.apellido,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
                        FROM historial h inner join clientes c on c.cedula = h.cedula where  h.Fecha like '%$fecha%' AND h.Atendedor like '%PAZ%' AND h.estatus = 1 ORDER BY  h.id ASC");
 
-              $resultado = mysqli_num_rows($sql);
-              $paz = 0;
-              $nro = 0;
-              if ($resultado > 0) {
-                while ($data = mysqli_fetch_array($sql)) {
-                  $paz += (int)$data['Monto'];
-                  $nro++;
-              ?>
-                  <tr class="text-center">
+                $resultado = mysqli_num_rows($sql);
+                $paz = 0;
+                $nro = 0;
+                if ($resultado > 0) {
+                  while ($data = mysqli_fetch_array($sql)) {
+                    $paz += (int)$data['Monto'];
+                    $nro++;
+                ?>
+                    <tr class="text-center">
 
-                    <td><?php echo $nro ?></td>
-                    <td><?php echo $data['id']; ?></td>
-                    <td><?php echo $data['Fecha']; ?></td>
-                    <td><?php echo $data['nombre'].' '.$data['apellido'];  ?></td>
-                    <td><?php echo $data['Cedula']; ?></td>
-                    <td><?php echo $data['Estudio']; ?></td>
-                    <td><?php echo $data['Atendedor']; ?></td>
-                    <td><?php echo $data['Seguro']; ?></td>
-                    <td><?php echo $data['Monto'] ?></td>
-                    <td><?php echo $data['MontoS'] ?></td>
-                    <td><?php echo $data['Descuento'] ?></td>
-                    <td><?php echo $data['Comentario'] ?></td>
+                      <td><?php echo $nro ?></td>
+                      <td><?php echo $data['id']; ?></td>
+                      <td><?php echo $data['Fecha']; ?></td>
+                      <td><?php echo $data['nombre'] . ' ' . $data['apellido'];  ?></td>
+                      <td><?php echo $data['Cedula']; ?></td>
+                      <td><?php echo $data['Estudio']; ?></td>
+                      <td><?php echo $data['Atendedor']; ?></td>
+                      <td><?php echo $data['Seguro']; ?></td>
+                      <td><?php echo $data['Monto'] ?></td>
+                      <td><?php echo $data['MontoS'] ?></td>
+                      <td><?php echo $data['Descuento'] ?></td>
+                      <td><?php echo $data['Comentario'] ?></td>
 
 
-                 
-                    <td>
-                    <div class="d-flex align-items-center">
-                      
-                      <a href="../View/cancelarOrden.php?id=<?php echo $data['id']; ?>" type="button"  class="btn btn-danger btn-sm btn-icon-text">
-                        Anular
-                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+
+                      <td>
+                        <div class="d-flex align-items-center">
+
+                          <a href="../View/cancelarOrden.php?id=<?php echo $data['id']; ?>" type="button" class="btn btn-danger btn-sm btn-icon-text">
+                            Anular
+                            <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
                 <?php }
-              } ?>
+                } ?>
               </tbody>
             </table>
             <section>
-           <p>Ingreso Total :</p>
-          <p style="text-align: right;" class="alert alert-danger"> <?php echo number_format($paz, 3, '.', '.'); ?>.<b>GS</b></p>
-        </section>
+              <p>Ingreso Total :</p>
+              <p style="text-align: right;" class="alert alert-danger"> <?php echo number_format($paz, 3, '.', '.'); ?>.<b>GS</b></p>
+            </section>
           </div>
         </div>
       </div>
@@ -186,9 +186,9 @@ require_once("../includes/header_admin.php");
         <div class="card">
           <div class="titulos col-md-3">
             <h3>Lista Diax <a class="btn btn-danger" href="../Reports/reporteDashboardDiario.php" target="_blank" rel="noopener noreferrer">
-            <i class="typcn typcn-user-add"></i> Reporte PDF
-           </a></h3>
-            
+                <i class="typcn typcn-user-add"></i> Reporte PDF
+              </a></h3>
+
           </div>
           <div class="table-responsive pt-3">
             <table class="table table-striped project-orders-table text-center">
@@ -210,57 +210,57 @@ require_once("../includes/header_admin.php");
                 </tr>
               </thead>
               <tbody>
-              <?php
-              // $fecha1 = "05-01-2023";
-              $fecha =  date('d-m-Y');
-              //  echo $fecha1." ".$fecha2;
-              //  exit;
-              $sql = mysqli_query($conection, "SELECT h.id,c.nombre,c.apellido,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
+                <?php
+                // $fecha1 = "05-01-2023";
+                $fecha =  date('d-m-Y');
+                //  echo $fecha1." ".$fecha2;
+                //  exit;
+                $sql = mysqli_query($conection, "SELECT h.id,c.nombre,c.apellido,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
                        FROM historial h inner join clientes c on c.cedula = h.cedula where  h.Fecha like '%$fecha%' AND h.Atendedor like '%DIAX%' AND h.estatus = 1 ORDER BY  h.id ASC");
 
-              $resultado = mysqli_num_rows($sql);
-              $diax = 0;
-              $nro = 0;
-              if ($resultado > 0) {
-                while ($data = mysqli_fetch_array($sql)) {
-                  $diax += (int)$data['Monto'];
-                  $nro++;
-              ?>
-                  <tr class="text-center">
+                $resultado = mysqli_num_rows($sql);
+                $diax = 0;
+                $nro = 0;
+                if ($resultado > 0) {
+                  while ($data = mysqli_fetch_array($sql)) {
+                    $diax += (int)$data['Monto'];
+                    $nro++;
+                ?>
+                    <tr class="text-center">
 
-                    <td><?php echo $nro ?></td>
-                    <td><?php echo $data['id']; ?></td>
-                    <td><?php echo $data['Fecha']; ?></td>
-                    <td><?php echo $data['nombre'].' '.$data['apellido'];  ?></td>
-                    <td><?php echo $data['Cedula']; ?></td>
-                    <td><?php echo $data['Estudio']; ?></td>
-                    <td><?php echo $data['Atendedor']; ?></td>
-                    <td><?php echo $data['Seguro']; ?></td>
-                    <td><?php echo $data['Monto'] ?></td>
-                    <td><?php echo $data['MontoS'] ?></td>
-                    <td><?php echo $data['Descuento'] ?></td>
-                    <td><?php echo $data['Comentario'] ?></td>
+                      <td><?php echo $nro ?></td>
+                      <td><?php echo $data['id']; ?></td>
+                      <td><?php echo $data['Fecha']; ?></td>
+                      <td><?php echo $data['nombre'] . ' ' . $data['apellido'];  ?></td>
+                      <td><?php echo $data['Cedula']; ?></td>
+                      <td><?php echo $data['Estudio']; ?></td>
+                      <td><?php echo $data['Atendedor']; ?></td>
+                      <td><?php echo $data['Seguro']; ?></td>
+                      <td><?php echo $data['Monto'] ?></td>
+                      <td><?php echo $data['MontoS'] ?></td>
+                      <td><?php echo $data['Descuento'] ?></td>
+                      <td><?php echo $data['Comentario'] ?></td>
 
 
-                 
-                  <td>
-                    <div class="d-flex align-items-center">
-                      
-                      <a href="../View/cancelarOrden.php?id=<?php echo $data['id']; ?>" type="button"  class="btn btn-danger btn-sm btn-icon-text">
-                        Anular
-                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+
+                      <td>
+                        <div class="d-flex align-items-center">
+
+                          <a href="../View/cancelarOrden.php?id=<?php echo $data['id']; ?>" type="button" class="btn btn-danger btn-sm btn-icon-text">
+                            Anular
+                            <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
                 <?php }
-              } ?>
+                } ?>
               </tbody>
             </table>
             <section>
-           <p>Ingreso Total :</p>
-          <p style="text-align: right;" class="alert alert-danger"> <?php echo number_format($diax, 3, '.', '.'); ?>.<b>GS</b></p>
-        </section>
+              <p>Ingreso Total :</p>
+              <p style="text-align: right;" class="alert alert-danger"> <?php echo number_format($diax, 3, '.', '.'); ?>.<b>GS</b></p>
+            </section>
           </div>
         </div>
       </div>
@@ -287,78 +287,70 @@ require_once("../includes/header_admin.php");
                 </tr>
               </thead>
               <tbody>
+                <?php
+                // $fecha1 = "05-01-2023";
+                $fecha =  date('Y-m-d');
+                //  echo $fecha1." ".$fecha2;
+                //  exit;
+                $sql = mysqli_query($conection, "SELECT g.id,g.descripcion,g.monto,g.created_at  FROM gastos g 
+               where  g.created_at like '%" . $fecha . "%' and g.estatus = 1");
+
+                $resultado = mysqli_num_rows($sql);
+                $gasto = 0;
+
+                if ($resultado > 0) {
+                  while ($data = mysqli_fetch_array($sql)) {
+                    $gasto += (int)$data['monto'];
+
+                ?>
+                    <tr class="text-center">
+
+                      <td><?php echo $data['id'] ?></td>
+                      <td><?php echo $data['created_at'] ?></td>
+                      <td><?php echo $data['descripcion']; ?></td>
+                      <td><?php echo $data['monto']; ?></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+
+                          <a href="../View/modificarGasto.php?id=<?php echo $data['id']; ?>" class="btn btn-outline-info"><i class="typcn typcn-edit"></i></a>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+
+                          <a href="../View/gastosCancelacion.php?id=<?php echo $data['id']; ?>" class="btn btn-outline-danger"><i class="typcn typcn-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+
+
+                <?php }
+                } ?>
+              </tbody>
+              <tr>
+                <td><b>Total A Gastos : </b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="alert alert-success text-center">
+                  <?php echo number_format($gasto, 3, '.', '.'); ?>.<b>GS</b>
+                </td>
+
+
+              </tr>
+            </table>
+            <section>
               <?php
-              // $fecha1 = "05-01-2023";
-              $fecha =  date('Y-m-d');
-              //  echo $fecha1." ".$fecha2;
-              //  exit;
-              $sql = mysqli_query($conection, "SELECT g.id,g.descripcion,g.monto,g.created_at  FROM gastos g 
-               where  g.created_at like '%".$fecha."%' and g.estatus = 1");
-
-              $resultado = mysqli_num_rows($sql);
-              $gasto = 0;
-
-              if ($resultado > 0) {
-                while ($data = mysqli_fetch_array($sql)) {
-                  $gasto += (int)$data['monto'];
+              $rendicion = $diax - $gasto;
 
               ?>
-                  <tr class="text-center">
-                  
-                    <td><?php echo $data['id'] ?></td>
-                    <td><?php echo $data['created_at'] ?></td>
-                    <td><?php echo $data['descripcion']; ?></td>
-                    <td><?php echo $data['monto']; ?></td>
-                    <td>
-                    <div class="d-flex align-items-center">
-                      
-                      <button type="button" class="btn btn-info btn-sm btn-icon-text">
-                        Editar
-                        <i class="typcn typcn-edit btn-icon-append"></i>
-                      </button>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      
-                      <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                        Anular
-                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                      </button>
-                    </div>
-                  </td>
-                  </tr>
-
-
-              <?php }
-              } ?>
-            </tbody>
-            <tr>
-              <td><b>Total A Gastos : </b></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="alert alert-success text-center">
-                <?php echo number_format($gasto, 3, '.', '.'); ?>.<b>GS</b>
-              </td>
-
-
-            </tr>
-          </table>
-        <section>
-          <?php
-            $rendicion = $diax - $gasto;
-
-          ?>
-          <p>Rencion Final</p>
-          <p style="text-align: right;" class="alert alert-danger"> <?php echo number_format($rendicion, 3, '.', '.'); ?>.<b>GS</b></p>
-        </section>
+              <p>Rencion Final</p>
+              <p style="text-align: right;" class="alert alert-danger"> <?php echo number_format($rendicion, 3, '.', '.'); ?>.<b>GS</b></p>
+            </section>
           </div>
         </div>
       </div>
     </div>
     <!---Fin de la tabla-------------------------------------------->
     <?php include('../includes/footer_admin.php'); ?>
-   
-

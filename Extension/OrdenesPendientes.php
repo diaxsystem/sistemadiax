@@ -45,7 +45,7 @@ require_once('../Models/conexion.php');
                 <tbody>
                   <?php
                   // $fecha1 = "05-01-2023";
-                  $fecha =  date('d-m-Y');
+                  $fecha =  date('m-Y');
                   //  echo $fecha1." ".$fecha2;
                   //  exit;
                   $sql = mysqli_query($conection, "SELECT h.id,c.nombre,c.apellido,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
