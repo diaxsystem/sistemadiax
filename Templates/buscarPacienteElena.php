@@ -27,7 +27,7 @@ require_once('../Models/conexion.php');
                             </div>
                    
                     <div class="tile-footer">
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Comenzar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="../Historial/PendientesAsignacion.php"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Comenzar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="../Templates/dashboard.php"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
                     </div>
                     </form>
                     </div>

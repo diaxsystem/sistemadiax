@@ -99,7 +99,7 @@
               <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="../Templates/listadoPacientesFabiola.php">Lista Paciente</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Templates/buscarPacienteFabiola.php">Buscar Paciente </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../Templates/clientes.php">Rendiciones </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/rendicionFabiola.php">Rendiciones </a></li>
               </ul>
             </div>
           </li>
@@ -113,7 +113,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Templates/listadoPacientesElena.php">Lista Paciente</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Templates/buscarPacienteElena.php">Buscar Paciente </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../Templates/clientes.php">Rendiciones </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/rendicionElena.php">Rendiciones </a></li>
               </ul>
             </div>
           </li>
