@@ -170,6 +170,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Templates/estudios.php"> Lista de Estudios </a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Templates/estudiosEliminados.php"> Estudios Eliminados </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/rendicionEstudios.php"> Rendición de Estudios</a></li>
               </ul>
             </div>
           </li>
