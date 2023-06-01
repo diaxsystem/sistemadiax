@@ -2,7 +2,7 @@
 //echo 'Hola desde el buscador';
 //print_r($_POST);
 session_start();
-require_once("../Modelos/conexion.php");
+require_once("../Models/conexion.php");
 
 
 $fecha_desde = '';
@@ -20,7 +20,7 @@ if (empty($_POST['fecha_desde']) && empty($_POST['fecha_hasta']) ) {
  //exit();
 
   $sql = mysqli_query($conection,"SELECT Estudio,count(*) as micontador FROM historial 
-  WHERE  Fecha LIKE '%".$hoy."%' AND Fecha LIKE '%".$hoy."%' group BY Estudio order by micontador");
+  WHERE  Fecha LIKE '%".$hoy."%' group BY Estudio order by micontador");
   //$rtotal=0;
 
 }else if(!empty($_POST['fecha_desde']) && !empty($_POST['fecha_hasta']) ){ 
@@ -34,6 +34,7 @@ if (empty($_POST['fecha_desde']) && empty($_POST['fecha_hasta']) ) {
    WHERE  Fecha BETWEEN '$desde' AND '$hasta' AND Fecha LIKE '%".$hoy."%' group BY Estudio order by micontador");
 }
 
+$resultado = mysqli_num_rows($sql);
 
 echo ' 
 
