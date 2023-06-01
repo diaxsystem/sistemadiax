@@ -19,7 +19,7 @@ if (empty($_POST['fecha_desde']) && empty($_POST['fecha_hasta']) ) {
  //echo  $hoy.''.$estudio;
  //exit();
 
-  $sql = mysqli_query($conection,"SELECT select Estudio,count(*) as micontador from historial where Fecha like '%$hoy%' group BY Estudio order by micontador");
+  $sql = mysqli_query($conection,"SELECT Estudio,count(*) as micontador FROM historial WHERE Fecha LIKE '%$hoy%' group BY Estudio order by micontador");
   //$rtotal=0;
 
 }else if(!empty($_POST['fecha_desde']) && !empty($_POST['fecha_hasta']) ){ 
