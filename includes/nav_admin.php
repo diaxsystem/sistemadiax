@@ -127,6 +127,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Templates/orden.php"> Registro de Paciente </a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Templates/ordenCanceladas.php"> Comprobante Cancelados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/reporteDiario.php"> Reporte Diarios</a></li>
               </ul>
             </div>
           </li>
