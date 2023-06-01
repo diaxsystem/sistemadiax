@@ -141,6 +141,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../Templates/medicos.php">Lista de Medicos</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../Templates/medicosEliminados.php">Medicos Eliminados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../Templates/rendicionesMedicos.php">Rendición de Medicos</a></li>
               </ul>
             </div>
           </li>
