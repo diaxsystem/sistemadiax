@@ -11,7 +11,7 @@ $where = '';
 if (empty($_POST['fecha_desde']) && empty($_POST['fecha_hasta'])) {
 
   $sql = mysqli_query($conection, "SELECT Estudio, COUNT(*) as cantidad FROM historial 
-   WHERE Fecha LIKE '%" . $hoy . "%'  GROUP BY Estudio ORDER BY cantidad ");
+   WHERE Fecha LIKE '%".$hoy."%'  GROUP BY Estudio ORDER BY cantidad ");
 
 
 } else if (!empty($_REQUEST['fecha_desde']) && !empty($_REQUEST['fecha_hasta'])) {
@@ -38,11 +38,12 @@ if (empty($_POST['fecha_desde']) && empty($_POST['fecha_hasta'])) {
 
 
   }
+  $sql = mysqli_query($conection, "SELECT Estudio, COUNT(*) as cantidad FROM historial 
+   WHERE $where  GROUP BY Estudio ORDER BY cantidad ");
 }
 
 
-$sql = mysqli_query($conection, "SELECT Estudio, COUNT(*) as cantidad FROM historial 
-   WHERE $where  GROUP BY Estudio ORDER BY cantidad ");
+
 
 
 $resultado = mysqli_num_rows($sql);
