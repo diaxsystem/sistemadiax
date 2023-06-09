@@ -29,7 +29,7 @@ require_once('../Models/conexion.php');
             <?php
             if (empty($_REQUEST['id'])) {
 
-                $sql = mysqli_query($conection, "SELECT * FROM usuario  WHERE  estatus = 1 order by id_usuario desc limit 1");
+                $sql = mysqli_query($conection, "SELECT c.id,c.cedula,c.nombre,c.apellido,c.celular,c.nacimiento FROM clientes c WHERE  estatus = 1 order by id desc limit 1");
 
                 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
@@ -42,16 +42,17 @@ require_once('../Models/conexion.php');
                     $option = '';
                     while ($data = mysqli_fetch_array($sql)) {
 
-                        $iduser     = $data['id_usuario'];
+                        $iduser     = $data['id'];
                         $cedula     = $data['cedula'];
                         $nombre     = $data['nombre'];
-                        $telefono   = $data['telefono'];
-                        $fecha_nac  = $data['fecha_nac'];
+                        $apellido   = $data['apellido'];
+                        $telefono   = $data['celular'];
+                        $fecha_nac  = $data['nacimiento'];
                     }
                 }
             } else {
 
-                $sql = mysqli_query($conection, "SELECT * FROM usuario  WHERE id_usuario = '" . $_REQUEST['id'] . "' AND estatus = 1 ");
+                $sql = mysqli_query($conection, "SELECT c.id,c.cedula,c.nombre,c.apellido,c.celular,c.nacimiento FROM clientes c WHERE id = '" . $_REQUEST['id'] . "' AND estatus = 1 ");
 
                 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
@@ -64,11 +65,12 @@ require_once('../Models/conexion.php');
                     $option = '';
                     while ($data = mysqli_fetch_array($sql)) {
 
-                        $id         = $data['id_usuario'];
+                        $id         = $data['id'];
                         $cedula     = $data['cedula'];
                         $nombre     = $data['nombre'];
-                        $telefono   = $data['telefono'];
-                        $fecha_nac  = $data['fecha_nac'];
+                        $apellido   = $data['apellido'];
+                        $telefono   = $data['celular'];
+                        $fecha_nac  = $data['nacimiento'];
                     }
                 }
             }
@@ -83,7 +85,7 @@ require_once('../Models/conexion.php');
                             <b>N° de Cedula :</b> <?= $cedula; ?>
                         </p>
                         <p class="card-description">
-                            <b>Nombre y Apellido :</b> <?= $nombre; ?>
+                            <b>Nombre y Apellido :</b> <?= $nombre.' '.$apellido; ?>
                         </p>
                         <p class="card-description">
                             <b>Nro de Telefono :</b> <?= $telefono; ?>
@@ -93,6 +95,11 @@ require_once('../Models/conexion.php');
                         </p>
                         <hr>
                         <form class="forms-sample" action="comprobante.php" method="POST">
+                            <input type="hidden" name="id"         id="id" value="<?php echo $id; ?>">
+                            <input type="hidden" name="cedula"     id="cedula" value="<?php echo $cedula; ?>">
+                            <input type="hidden" name="nombre"     id="nombre" value="<?php echo $nombre; ?>">
+                            <input type="hidden" name="apellido"   id="apellido" value="<?php echo $apellido; ?>">
+                            <input type="hidden" name="nacimiento" id="nacimiento" value="<?php echo $fecha_nac; ?>">
                             <div class="form-group">
                                 <label for="exampleInputName1">Estudio a Realizar</label>
                                 <select name="ecografias[]" class="chosen form-control" data-placeholder="Elige uno o varios estudios" multiple>
@@ -137,26 +144,10 @@ require_once('../Models/conexion.php');
                                 <label for="seguro">Tipo de Seguro</label>
                                 <select class="form-control" name="seguro" id="seguro" required data-placeholder="Seleccione un Seguro" id="test" onchange="document.getElementById('text_content').value=this.options[this.selectedIndex].text">
                                             <option value="SinSeguro">Sin Seguro</option>
-                                            <option value="SEMEI">SEMEI Cobertura Total</option>
-                                            <option value="SemeiPref">SEMEI Preferencial</option>
-                                            <option value="Seguros">Prosalud Total</option>
-                                            <option value="Seguros">IMS Total</option>
-                                            <option value="Seguros">Fleming Seguros Total</option>
-                                            <option value="Seguros">SPS Total</option>
-                                            <option value="Seguros">Medilife Total</option>
-                                            <option value="Seguros">OAMI Total</option>
-                                            <option value="Seguros">MCI Total</option>
-                                            <option value="SegurosPref">MCI Preferencial</option>
-                                            <option value="SegurosPref">Prosalud Preferencial</option>
-                                            <option value="SegurosPref">Medilife Preferencial</option>
-                                            <option value="SegurosPref">IMS Preferencial</option>
-                                            <option value="SegurosPref">Fleming Preferencial</option>
-                                            <option value="SegurosPref">SPS Preferencial</option>
-                                            <option value="SegurosPref">OAMI Preferencial</option>
-                                            <option value="SegurosPref">OAMI COPAGO</option>
-                                            <option value="Hospitalar">Hospitalar</option>
+                                            <option value="Hospitalar">Hospitalario</option>
                                         </select>
                             </div>
+                            <input type="hidden" name="texto" id="text_content" value=" " />
                             <div class="form-group">
                                 <label>Descuento a Aplicar</label>
                                 <input type="number" class="form-control"name="descuento" value="0">
