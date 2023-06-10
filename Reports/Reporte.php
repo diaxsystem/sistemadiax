@@ -1,12 +1,31 @@
 <?php 
+
 session_start();
 
-
 require_once("../Models/conexion.php");
+if (empty($_SESSION['active'])) {
+	header('location: ../Templates/salir.php');
+}
 
+
+	
+
+//Recuperacion de datos para mostrar al seleccionar Actualizar
+//echo $_REQUEST['id'];
+//exit();
+
+
+if (empty($_REQUEST['id'])) {
+	header('location: ../Templates/dashboard.php');
+
+	//mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
+
+}
+
+$id = $_REQUEST['id'];
 
 $sql = mysqli_query($conection,"SELECT h.id,c.Nombre,c.Apellido,c.Nacimiento,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
-FROM historial h inner join clientes c on c.cedula = h.cedula   ORDER BY h.id DESC LIMIT 1");
+FROM historial h inner join clientes c on c.cedula = h.cedula  WHERE h.id = $id");   
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
@@ -18,7 +37,7 @@ $resultado = mysqli_num_rows($sql);
 
 if ($resultado == 0) {
      
-	header("location: ../Plantillas/comprobantes.php");
+	header("location: ../Templates/dashboard.php");
 }else{
 	$option = '';
 	while ($data = mysqli_fetch_array($sql)) {
@@ -47,13 +66,13 @@ ob_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/sistemadiax/assets/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/sistema_diax/bootstrap/dist/css/bootstrap.min.css">
   <title>Reporte de Comprobantes</title>
 </head>
 
 <body>
 
-  <main class="app-content">
+<main class="app-content">
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
@@ -123,10 +142,10 @@ ob_start();
 
                     <td><?php echo $Cedula; ?></td>
                     <td><?php echo $Nombre.' '.$Apellido; ?></td>
-                    <td><?php echo $Atendedor; ?></td>
+                    <td><?php echo $Nacimiento; ?></td>
                     <td><?php echo $Fecha; ?></td>
                     <td><?php echo $Estudio; ?></td>
-                    <td><?php echo $Nacimiento; ?></td>
+                    <td><?php echo $Atendedor; ?></td>
                     <td><?php echo $Monto; ?></td>
                     <td><?php echo $Descuento; ?></td>
                     <td><?php echo $Seguro; ?></td>
@@ -168,9 +187,6 @@ $dompdf->setPaper('a4', 'portrait');
 
 
 $dompdf->render();
-$dompdf->stream('reporte-cliente.pdf', array('Attachment' => false));
-$dompdf->stream($Cedula."-".$Fecha);
-$output = $dompdf->output();
-file_put_contents("comprobante", $output);
+$dompdf->stream('reporte-Comprobante.pdf', array('Attachment' => false));
 
 ?>

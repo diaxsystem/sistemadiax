@@ -1,12 +1,31 @@
 <?php 
+
 session_start();
 
-
 require_once("../Models/conexion.php");
+if (empty($_SESSION['active'])) {
+	header('location: ../Templates/salir.php');
+}
 
+
+	
+
+//Recuperacion de datos para mostrar al seleccionar Actualizar
+//echo $_REQUEST['id'];
+//exit();
+
+
+if (empty($_REQUEST['id'])) {
+	header('location: ../Templates/dashboard.php');
+
+	//mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
+
+}
+
+$id = $_REQUEST['id'];
 
 $sql = mysqli_query($conection,"SELECT h.id,c.Nombre,c.Apellido,c.Celular,c.Nacimiento,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
-FROM historial h inner join clientes c on c.cedula = h.cedula   ORDER BY h.id DESC LIMIT 1");
+FROM historial h inner join clientes c on c.cedula = h.cedula  WHERE h.id = $id");   
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
@@ -18,12 +37,11 @@ $resultado = mysqli_num_rows($sql);
 
 if ($resultado == 0) {
      
-	header("location: ../Plantillas/comprobantes.php");
+	header("location: ../Templates/dashboard.php");
 }else{
 	$option = '';
-    $cont = 0;
 	while ($data = mysqli_fetch_array($sql)) {
-		$cont++;
+		
 		$id          = $data['id'];
 		$Cedula      = $data['Cedula'];
 		$Estudio     = $data['Estudio'];
@@ -35,8 +53,8 @@ if ($resultado == 0) {
 		$Fecha       = $data['Fecha'];
 		$Nombre      = $data['Nombre'];
 		$Apellido    = $data['Apellido'];
+		$Nacimiento  = $data['Nacimiento'];
 		$Celular     = $data['Celular'];
-		$Nacimiento    = $data['Nacimiento'];
 
 	}
 }
@@ -97,7 +115,7 @@ ob_start();
 						</tr>
 						<tr>
 							<td><label>Nombre: </label> <p> <?php echo $Nombre.''.$Apellido; ?></p></td>
-							<td><label>Fecha Nacimiento: </label> <p> <?php echo $Nacimiento;?></p></td>
+							<td><label>Fecha Nac. : </label> <p> <?php echo $Nacimiento;?></p></td>
 							
 						</tr>
 					</table>
@@ -194,7 +212,7 @@ ob_start();
 						</tr>
 						<tr>
 							<td><label>Nombre: </label> <p> <?php echo $Nombre.''.$Apellido; ?></p></td>
-							<td><label>Fecha de Nacimiento: </label> <p> <?php echo $Nacimiento; ?></p></td>
+							<td><label>Fecha de Nac. : </label> <p> <?php echo $Nacimiento; ?></p></td>
 						</tr>
 					</table>
 				</div>

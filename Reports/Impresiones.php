@@ -1,15 +1,42 @@
 <?php
 require_once("../includes/header_admin.php");
 
-if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) {
-    if (empty($_SESSION['active'])) {
-        header('location: salir.php');
-    }
-} else {
-    header('location: salir.php');
-}
-
 require_once('../Models/conexion.php');
+$sql = mysqli_query($conection,"SELECT h.id,c.Nombre,c.Apellido,c.Celular,c.Nacimiento,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
+FROM historial h inner join clientes c on c.cedula = h.cedula   ORDER BY h.id DESC LIMIT 1");
+
+//mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
+
+//echo 'paso el sql';
+//exit();
+
+
+$resultado = mysqli_num_rows($sql);
+
+if ($resultado == 0) {
+     
+	header("location: ../Plantillas/comprobantes.php");
+}else{
+	$option = '';
+    $cont = 0;
+	while ($data = mysqli_fetch_array($sql)) {
+		$cont++;
+		$id          = $data['id'];
+		$Cedula      = $data['Cedula'];
+		$Estudio     = $data['Estudio'];
+		$Atendedor   = $data['Atendedor'];
+		$Seguro      = $data['Seguro'];
+		$Monto       = $data['Monto'];
+		$Descuento   = $data['Descuento'];
+		$Comentario  = $data['Comentario'];
+		$Fecha       = $data['Fecha'];
+		$Nombre      = $data['Nombre'];
+		$Apellido    = $data['Apellido'];
+		$Celular     = $data['Celular'];
+		$Nacimiento    = $data['Nacimiento'];
+
+	}
+}
 
 ?>
 
@@ -32,12 +59,12 @@ require_once('../Models/conexion.php');
                                             <div>
                                                 <p class="mb-2 text-md-center text-lg-left">Recibo</p>
                                                 <hr>
-                                                <h3 class="mb-0" >Imprimir  Recibo</h3>
+                                                <h3 class="mb-0">Imprimir Recibo</h3>
                                             </div>
                                             <br>
                                             <i class="typcn typcn-credit-card icon-xl text-secondary"></i>
                                         </div>
-                                        <a href="Recibo.php" class="btn btn-success" target="_blank">Recibo</a>
+                                        <a href="Recibo.php?id=<?php echo $id; ?>" class="btn btn-success" target="_blank">Recibo</a>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +79,7 @@ require_once('../Models/conexion.php');
                                             </div>
                                             <i class="typcn typcn-credit-card icon-xl text-secondary"></i>
                                         </div>
-                                        <a href="Factura.php" class="btn btn-danger" target="_blank">Factura</a>
+                                        <a href="Factura.php?id=<?php echo $id; ?>" class="btn btn-danger" target="_blank">Factura</a>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +94,7 @@ require_once('../Models/conexion.php');
                                             </div>
                                             <i class="typcn typcn-credit-card icon-xl text-secondary"></i>
                                         </div>
-                                        <a href="Reporte.php" class="btn btn-info" target="_blank">Comprobante</a>
+                                        <a href="Reporte.php?id=<?php echo $id; ?>" class="btn btn-info" target="_blank">Comprobante</a>
                                     </div>
                                 </div>
                             </div>
