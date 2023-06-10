@@ -1,7 +1,5 @@
 <?php
 
-//print_r($_POST);
-//exit();
 session_start();
 require_once("../Models/conexion.php");
 $iduser = $_SESSION['user'];
