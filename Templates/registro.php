@@ -27,9 +27,10 @@ require_once('../Models/conexion.php');
                 </div>
             </div>
             <?php
+            
             if (empty($_REQUEST['id'])) {
 
-                $sql = mysqli_query($conection, "SELECT c.id,c.cedula,c.nombre,c.apellido,c.celular,c.nacimiento FROM clientes c WHERE  estatus = 1 order by id desc limit 1");
+                $sql = mysqli_query($conection, "SELECT c.id,c.cedula,c.nombre,c.apellido,c.celular,c.nacimiento FROM clientes c  order by id desc limit 1");
 
                 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
@@ -52,7 +53,7 @@ require_once('../Models/conexion.php');
                 }
             } else {
 
-                $sql = mysqli_query($conection, "SELECT c.id,c.cedula,c.nombre,c.apellido,c.celular,c.nacimiento FROM clientes c WHERE id = '" . $_REQUEST['id'] . "' AND estatus = 1 ");
+                $sql = mysqli_query($conection, "SELECT c.id,c.cedula,c.nombre,c.apellido,c.celular,c.nacimiento FROM clientes c WHERE id = '" . $_REQUEST['id'] . "'  ");
 
                 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
@@ -97,8 +98,7 @@ require_once('../Models/conexion.php');
                         <form class="forms-sample" action="comprobante.php" method="POST">
                             <input type="hidden" name="id"         id="id" value="<?php echo $id; ?>">
                             <input type="hidden" name="cedula"     id="cedula" value="<?php echo $cedula; ?>">
-                            <input type="hidden" name="nombre"     id="nombre" value="<?php echo $nombre; ?>">
-                            <input type="hidden" name="apellido"   id="apellido" value="<?php echo $apellido; ?>">
+                            <input type="hidden" name="nombre"     id="nombre" value="<?php echo $nombre .' '.$apellido; ?>">
                             <input type="hidden" name="nacimiento" id="nacimiento" value="<?php echo $fecha_nac; ?>">
                             <div class="form-group">
                                 <label for="exampleInputName1">Estudio a Realizar</label>
