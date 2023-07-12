@@ -28,7 +28,7 @@ require_once("../includes/header_admin.php");
                                             <br>
                                             <i class="typcn typcn-credit-card icon-xl text-secondary"></i>
                                         </div>
-                                        <a href="Recibo.php?id=<?php echo $id; ?>" class="btn btn-success" target="_blank">Recibo</a>
+                                        <a href="../Reports/Factura.php" class="btn btn-success" target="_blank">Recibo</a>
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@ require_once("../includes/header_admin.php");
                                             </div>
                                             <i class="typcn typcn-credit-card icon-xl text-secondary"></i>
                                         </div>
-                                        <a href="Factura.php?id=<?php echo $id; ?>" class="btn btn-danger" target="_blank">Factura</a>
+                                        <a href="../Reports/Recibo.php" class="btn btn-danger" target="_blank">Factura</a>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@ require_once("../includes/header_admin.php");
                                             </div>
                                             <i class="typcn typcn-credit-card icon-xl text-secondary"></i>
                                         </div>
-                                        <a href="Reporte.php?id=<?php echo $id; ?>" class="btn btn-info" target="_blank">Comprobante</a>
+                                        <a href="../Reports/Reporte.php" class="btn btn-info" target="_blank">Comprobante</a>
                                     </div>
                                 </div>
                             </div>

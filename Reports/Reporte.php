@@ -3,29 +3,11 @@
 session_start();
 
 require_once("../Models/conexion.php");
-if (empty($_SESSION['active'])) {
-	header('location: ../Templates/salir.php');
-}
 
 
-	
-
-//Recuperacion de datos para mostrar al seleccionar Actualizar
-//echo $_REQUEST['id'];
-//exit();
-
-
-if (empty($_REQUEST['id'])) {
-	header('location: ../Templates/dashboard.php');
-
-	//mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
-
-}
-
-$id = $_REQUEST['id'];
 
 $sql = mysqli_query($conection,"SELECT h.id,c.Nombre,c.Apellido,c.Nacimiento,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
-FROM historial h inner join clientes c on c.cedula = h.cedula  WHERE h.id = $id");   
+FROM historial h inner join clientes c on c.cedula = h.cedula  ORDER BY h.id DESC LIMIT 1 ");   
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
