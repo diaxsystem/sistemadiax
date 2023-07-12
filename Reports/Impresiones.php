@@ -5,7 +5,7 @@ require_once('../Models/conexion.php');
 $sql = mysqli_query($conection,"SELECT h.id,c.Nombre,c.Apellido,c.Celular,c.Nacimiento,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
 FROM historial h inner join clientes c on c.cedula = h.cedula   ORDER BY h.id DESC LIMIT 1");
 
-//mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
+mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
 //echo 'paso el sql';
 //exit();
