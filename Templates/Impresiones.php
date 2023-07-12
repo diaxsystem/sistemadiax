@@ -1,3 +1,9 @@
+<?php
+require_once("../includes/header_admin.php");
+
+
+?>
+
 
 <div class="main-panel">
     <div class="content-wrapper">
