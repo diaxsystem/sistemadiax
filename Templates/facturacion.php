@@ -41,7 +41,7 @@ $comprobante = mysqli_query($conection, "INSERT INTO historial(Cedula,Estudio,At
 }
 
 if ($comprobante) {
-  header('location: ../Reports/Impresiones.php');
+  header('location: Impresiones.php');
 } else {
   echo "<script>javascript:alert('Ha ocurrido un error');</script>";
   exit();
