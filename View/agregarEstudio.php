@@ -31,7 +31,7 @@ require_once('../Controllers/grabarEstudio.php');
 
                 <div class="form-group">
                   <label class="control-label">Precio Preferencial</label>
-                  <input class="form-control" type="text" name="SemeiPref" id="SemeiPref" placeholder="Ingrese el monto" required>
+                  <input class="form-control" type="text" name="SegurosPref" id="SegurosPref" placeholder="Ingrese el monto" required>
                 </div>
 
                 <div class="form-group">
