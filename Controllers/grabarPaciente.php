@@ -21,7 +21,7 @@ require_once("../Models/conexion.php");
     $resultado = mysqli_fetch_array($query);
 
     if ($resultado > 0) {
-      echo  "<script>javascript:alert('Ha ocurrido un error');</script>";
+      echo  "<script>javascript:alert('Ha ocurrido un error, el Paciente ya existe');</script>";
     } else {
 
       $query_insert = mysqli_query($conection, "INSERT INTO clientes(Cedula,Apellido,Nombre,Nacimiento,Sexo,Celular)
@@ -30,7 +30,7 @@ require_once("../Models/conexion.php");
       if ($query_insert) {
         header('Location: ../Templates/registro.php');
       } else {
-       echo  "<script>javascript:alert('Ha ocurrido un error');</script>";
+       echo  "<script>javascript:alert('Ha ocurrido un error al registrar');</script>";
        exit();
       }
     }
