@@ -8,14 +8,8 @@ header("Expires: 0");
 
 <?php
 session_start();
-if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) {
-  if (empty($_SESSION['active'])) {
-    header('location: salir.php');
-  }
-} else {
-  header('location: salir.php');
-}
-require_once("../Modelos/conexion.php");
+
+require_once("../Models/conexion.php");
 
 $medico = '';
 $fecha_desde = '';
