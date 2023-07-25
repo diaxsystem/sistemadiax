@@ -322,12 +322,12 @@ require_once("../includes/header_admin.php");
                         </div>
                       </td>
                     </tr>
-
+                  
 
                 <?php }
                 } ?>
               </tbody>
-              <tr>
+              
                 <td><b>Total A Gastos : </b></td>
                 <td></td>
                 <td></td>

@@ -23,6 +23,7 @@ if (!empty($_POST)) {
             
 
         $query = mysqli_query($conection,"SELECT * FROM usuarios WHERE cedula = '$cedula' or usuario = '$usuario' or correo = '$correo'");
+        
 
         $resultado = mysqli_fetch_array($query);
 
@@ -44,5 +45,6 @@ if (!empty($_POST)) {
 
        }
     }
+    mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 }
 

@@ -46,6 +46,7 @@ require_once("../Models/conexion.php");
 				$alert = '<p class = "msg_error">Error al Actualizar el Registro</p>';
 			}
 		}
+		mysqli_close($conection);
 	}
 
 ?>

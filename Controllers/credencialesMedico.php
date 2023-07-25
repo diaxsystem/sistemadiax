@@ -57,7 +57,7 @@ $id = $_REQUEST['id'];
 $sql = mysqli_query($conection, "SELECT m.id,m.nombre,m.usuario,m.pass
 FROM medicos m  where m.id = $id AND m.estatus = 1");
 
-//mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
+mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
 
 $resultado = mysqli_num_rows($sql);

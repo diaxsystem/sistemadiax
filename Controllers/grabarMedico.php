@@ -43,6 +43,7 @@ if (!empty($_POST)) {
          }
 
        }
+       mysqli_close($conection);
     }
 //}
 

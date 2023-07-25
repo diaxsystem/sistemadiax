@@ -15,7 +15,9 @@ require_once("../Models/conexion.php");
     $resultado = 0;
 
     $query = mysqli_query($conection, "SELECT * FROM clientes WHERE  cedula = '$Cedula'");
-
+    
+    mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
+    
     $resultado = mysqli_fetch_array($query);
 
     if ($resultado > 0) {
