@@ -16,12 +16,12 @@ require_once("../Models/conexion.php");
 
     $query = mysqli_query($conection, "SELECT * FROM clientes WHERE  cedula = '$Cedula'");
     
-    mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
+    
     
     $resultado = mysqli_fetch_array($query);
 
     if ($resultado > 0) {
-      echo  "<script>javascript:alert('Ha ocurrido un error, el Paciente ya existe');</script>";
+      echo $alert = '<p class = "msg_success">El Usuario ya existe</p>';
     } else {
 
       $query_insert = mysqli_query($conection, "INSERT INTO clientes(Cedula,Apellido,Nombre,Nacimiento,Sexo,Celular)
@@ -30,8 +30,9 @@ require_once("../Models/conexion.php");
       if ($query_insert) {
         header('Location: ../Templates/registro.php');
       } else {
-       echo  "<script>javascript:alert('Ha ocurrido un error al registrar');</script>";
+        echo $alert = '<p class = "msg_error">Error al registrar el usuario</p>';
        exit();
       }
+      mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
     }
   
