@@ -58,7 +58,9 @@ require_once("../includes/header_admin.php");
                                             </div>
                                             <i class="typcn typcn-credit-card icon-xl text-secondary"></i>
                                         </div>
-                                        <a href="../Reports/Reporte.php" class="btn btn-info" target="_blank">Comprobante</a>
+                                        <form action="../Reports/Reporte.php" target="_blank">
+                                            <button type="submit" class="btn btn-info">Reporte</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
