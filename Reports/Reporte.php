@@ -7,7 +7,7 @@ require_once("../Models/conexion.php");
 $hoy =  date('d-m-Y');
 
 $sql = mysqli_query($conection,"SELECT h.id,c.Nombre,c.Apellido,c.Nacimiento,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
-FROM historial h inner join clientes c on c.cedula = h.cedula WHERE  h.Fecha like '%$fecha%'  ORDER BY h.id DESC LIMIT 1 ");   
+FROM historial h inner join clientes c on c.cedula = h.cedula WHERE  h.Fecha like '%$hoy%'  ORDER BY h.id DESC LIMIT 1 ");   
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 

@@ -32,7 +32,6 @@ require_once('../Models/conexion.php');
             $id          = $_POST['id'];
             $ci          = $_POST['cedula'];
             $nombre      = $_POST['nombre'];
-            $apellido    = $_POST['apellido'];
             $nacimiento  = $_POST['nacimiento'];
             $seguro      = $_POST['seguro'];
             $segurot     = $_POST['texto'];
