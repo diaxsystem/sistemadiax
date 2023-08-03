@@ -1,6 +1,5 @@
 <?php
-echo $_REQUEST['id'];
-exit();
+
 require_once("../Controllers/modificarPaciente.php");
 require_once("../includes/header_admin.php");
 ?>

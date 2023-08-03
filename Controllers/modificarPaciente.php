@@ -49,7 +49,8 @@ if (!empty($_POST)) {
 }
 
 //Recuperacion de datos para mostrar al seleccionar Actualizar
-
+echo $_REQUEST['id'];
+exit();
 if (empty($_REQUEST['id'])) {
 	header('location: ../Templates/clientes.php');
 
