@@ -49,14 +49,14 @@ if (!empty($_POST)) {
 }
 
 //Recuperacion de datos para mostrar al seleccionar Actualizar
-echo $_REQUEST['id'];
-exit();
-if (empty($_REQUEST['id'])) {
-	header('location: ../Templates/clientes.php');
+// echo $_REQUEST['id'];
+// exit();
+// if (empty($_REQUEST['id'])) {
+// 	header('location: ../Templates/clientes.php');
 
-	//mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
+// 	//mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
-}
+// }
 
 $id = $_REQUEST['id'];
 
