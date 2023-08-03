@@ -67,6 +67,8 @@ FROM clientes c WHERE c.id = $id AND c.estatus = 1");
 
 
 $resultado = mysqli_num_rows($sql);
+print_r($resultado);
+exit();
 
 if ($resultado == 0) {
 	echo "No se encontro la Informacion del Paciente";
