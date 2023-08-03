@@ -49,8 +49,7 @@ if (!empty($_POST)) {
 }
 
 //Recuperacion de datos para mostrar al seleccionar Actualizar
-// echo $_REQUEST['id'];
-// exit();
+
 if (empty($_REQUEST['id'])) {
 	header('location: ../Templates/clientes.php');
 
@@ -61,18 +60,15 @@ if (empty($_REQUEST['id'])) {
 $id = $_REQUEST['id'];
 
 $sql = mysqli_query($conection, "SELECT c.id,c.Cedula,c.Nombre,c.Apellido,c.Celular,c.Sexo,c.Nacimiento 
-FROM clientes c WHERE c.id = $id AND c.estatus = 1");
+FROM clientes c WHERE c.id = $id ");
 
 //mysqli_close($conection);//con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
 
 
 $resultado = mysqli_num_rows($sql);
-print_r($resultado);
-exit();
 
 if ($resultado == 0) {
-	echo "No se encontro la Informacion del Paciente";
-	exit();
+	header("location: ../Templates/clientes.php");
 } else {
 	$option = '';
 	while ($data = mysqli_fetch_array($sql)) {
