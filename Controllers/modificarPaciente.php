@@ -70,6 +70,7 @@ $resultado = mysqli_num_rows($sql);
 
 if ($resultado == 0) {
 	echo "No se encontro la Informacion del Paciente";
+	exit();
 } else {
 	$option = '';
 	while ($data = mysqli_fetch_array($sql)) {
