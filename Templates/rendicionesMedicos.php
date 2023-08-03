@@ -42,7 +42,7 @@ require_once('../Models/conexion.php');
                             </div>
   
                             <div class="card-body" id="formPDF" style="display: none;">
-                        <form class="row" method="POST" action="../Reports/reporteMedicoExcel.php" target="_blank" >
+                        <form class="row" method="POST" action="../Reports/reporteMedicoPDF.php" target="_blank" >
                             <div class="col-md-6">
                                 <div class="widget-small">
                                     <input type="date" name="fecha_desde" id="fecha_desde" class="form-control">
