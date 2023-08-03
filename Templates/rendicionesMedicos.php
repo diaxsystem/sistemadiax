@@ -40,9 +40,9 @@ require_once('../Models/conexion.php');
                                 </div>
                                 
                             </div>
-
-                    <div class="card-body" id="formPDF">
-                        <form class="row" method="POST" action="../Reports/reporteMedicoPDF.php" target="_blank" >
+  
+                            <div class="card-body" id="formPDF" style="display: none;">
+                        <form class="row" method="POST" action="../Reports/reporteMedicoExcel.php" target="_blank" >
                             <div class="col-md-6">
                                 <div class="widget-small">
                                     <input type="date" name="fecha_desde" id="fecha_desde" class="form-control">
@@ -57,33 +57,21 @@ require_once('../Models/conexion.php');
 
                             <div class="col-md-10">
                                 <div class="widget-small">
-                                    <?php
-                                    include "../Models/conexion.php";
+                                <select class="chosen form-control" name="medico" id="medico" required data-placeholder="Seleccione un Medico">
+                                            <option value=""></option>
+                                            <?php
+                                            $raw_results4 = mysqli_query($conection, "select * from medicos;") or die(mysqli_error($conection));
+                                            while ($results = mysqli_fetch_array($raw_results4)) {
+                                            ?>
 
-                                    $query_medicos = mysqli_query($conection, "SELECT * FROM medicos");
+                                                <option value=" <?php echo $results['Nombre'] ?> ">
+                                                    <?php echo $results['Nombre']; ?>
+                                                </option>
 
-                                    mysqli_close($conection); //con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
-                                    $resultado = mysqli_num_rows($query_medicos);
-
-                                    ?>
-                                    <select name="medico" id="medico" class="form-control" >
-                                        <?php
-
-                                        if ($resultado > 0) {
-                                            while ($medico = mysqli_fetch_array($query_medicos)) {
-
-                                        ?>
-                                                <option value="<?php echo $medico["Nombre"]; ?>"><?php echo
-                                                                                                    $medico["Nombre"] ?></option>
-
-                                        <?php
-
-
+                                            <?php
                                             }
-                                        }
-
-                                        ?>
-                                    </select>
+                                            ?>
+                                        </select>
                                 </div>
                             </div>
 
@@ -112,33 +100,21 @@ require_once('../Models/conexion.php');
 
                             <div class="col-md-10">
                                 <div class="widget-small">
-                                    <?php
-                                    include "../Models/conexion.php";
+                                <select class="chosen form-control" name="medico" id="medico" required data-placeholder="Seleccione un Medico">
+                                            <option value=""></option>
+                                            <?php
+                                            $raw_results4 = mysqli_query($conection, "select * from medicos;") or die(mysqli_error($conection));
+                                            while ($results = mysqli_fetch_array($raw_results4)) {
+                                            ?>
 
-                                    $query_medicos = mysqli_query($conection, "SELECT * FROM medicos");
+                                                <option value=" <?php echo $results['Nombre'] ?> ">
+                                                    <?php echo $results['Nombre']; ?>
+                                                </option>
 
-                                    mysqli_close($conection); //con esto cerramos la conexion a la base de datos una vez conectado arriba con el conexion.php
-                                    $resultado = mysqli_num_rows($query_medicos);
-
-                                    ?>
-                                    <select name="medico" id="medico" class="form-control" >
-                                        <?php
-
-                                        if ($resultado > 0) {
-                                            while ($medico = mysqli_fetch_array($query_medicos)) {
-
-                                        ?>
-                                                <option value="<?php echo $medico["Nombre"]; ?>"><?php echo
-                                                                                                    $medico["Nombre"] ?></option>
-
-                                        <?php
-
-
+                                            <?php
                                             }
-                                        }
-
-                                        ?>
-                                    </select>
+                                            ?>
+                                        </select>
                                 </div>
                             </div>
 
@@ -171,25 +147,33 @@ require_once('../Models/conexion.php');
         <script src="../node_modules/chosen-js/chosen.jquery.min.js"></script>
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../node_modules/chosen-js/chosen.jquery.js"></script>
-
-        <script type='text/javascript'>
-            $(document).ready(function() {
+        <script>
+           
+                $(document).ready(function() {
                 $(".chosen").chosen();
+                
             });
             
-            const pdf = document.getElementById('pdf');
+           
+        </script>
+
+        <script type='text/javascript'>
+           
+           const pdf = document.getElementById('pdf');
             const excel = document.getElementById('excel');
 
-            document.getElementById('formPDF').style.display = 'none';
-            document.getElementById('formExcel').style.display = 'none';
+            document.getElementById('formPDF').style.display = 'block';
+            document.getElementById('formExcel').style.display = 'block';
+           
 
             //pdf.checked = true;
 
             pdf.addEventListener('click', (e) => {
+                
                 excel.checked = false;
                 if (e.target.checked) {
                   //  alert('Has seleccionado PDF');
-
+                    
                     document.getElementById('formExcel').style.display = 'none';
                     document.getElementById('formPDF').style.display = 'block';
                    // document.getElementById('inptudNombre').value = '';
@@ -197,10 +181,11 @@ require_once('../Models/conexion.php');
             })
 
             excel.addEventListener('click', (e) => {
+                
                 pdf.checked = false;
                 if (e.target.checked) {
                    // alert('Has seleccionado Excel');
-
+                   
                     document.getElementById('formPDF').style.display = 'none';
                     document.getElementById('formExcel').style.display = 'block';
                    // document.getElementById('inptudNombre').value = '';
@@ -208,8 +193,4 @@ require_once('../Models/conexion.php');
             })
 
         </script>
-        <script>
-            $(document).ready(function() {
-                $(".chosen").chosen();
-            });
-        </script>
+       
