@@ -1,4 +1,6 @@
 <?php
+echo $_REQUEST['id'];
+exit();
 require_once("../Controllers/modificarPaciente.php");
 require_once("../includes/header_admin.php");
 ?>
@@ -17,7 +19,7 @@ require_once("../includes/header_admin.php");
               </p>
               <form class="forms-sample" method="POST" action="">
                 <div class="form-group">
-                  <input type="hidden" name="id" id="id" value="<?php echo $_REQUEST['id'] ?>">
+                  <input type="hidden" name="id" id="id" value="<?php echo $data['id']; ?>">
                   <label for="cedula">Cedula :</label>
                   <input type="text" class="form-control" id="cedula" name="cedula" value="<?php echo $cedula; ?>">
                 </div>
