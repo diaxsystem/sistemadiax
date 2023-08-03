@@ -48,7 +48,7 @@ require_once('../Models/conexion.php');
                   $fecha =  date('m-Y');
                   //  echo $fecha1." ".$fecha2;
                   //  exit;
-                  $sql = mysqli_query($conection, "SELECT h.id,c.nombre,c.apellido,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
+                  $sql = mysqli_query($conection, "SELECT DISTINCT(h.id),c.nombre,c.apellido,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
                        FROM historial h inner join clientes c on c.cedula = h.cedula where  h.Fecha like '%$fecha%' AND h.estatus = 2 ORDER BY  h.id ASC");
 
                   $resultado = mysqli_num_rows($sql);
