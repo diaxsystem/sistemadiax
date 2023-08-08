@@ -17,7 +17,7 @@ if (!empty($_POST)) {
 		$id              = $_POST['id'];
 		$Estudio         = $_POST['Estudio'];
 		$SinSeguro       = $_POST['SinSeguro'];
-		$SegurosPref       = $_POST['SegurosPref'];
+		$SegurosPref     = $_POST['SegurosPref'];
 		$Hospitalar      = $_POST['Hospitalar'];
 		
 
@@ -40,7 +40,8 @@ if (!empty($_POST)) {
 
 	}else{
 
-		$sql_update = mysqli_query($conection,"UPDATE tarifas SET Estudio = '$Estudio', SinSeguro = '$SinSeguro', SegurosPref = '$SegurosPref', Hospitalar = '$Hospitalar' WHERE id = $id");
+		$sql_update = mysqli_query($conection,"UPDATE tarifas SET Estudio = '$Estudio', SinSeguro = '$SinSeguro',
+		 SegurosPref = '$SegurosPref', Hospitalar = '$Hospitalar' WHERE id = $id");
 
 		if ($sql_update) {
 
@@ -79,7 +80,7 @@ if ($resultado == 0) {
 		$id           = $data['id'];
 		$Estudio      = $data['Estudio'];
 		$SinSeguro    = $data['SinSeguro'];
-		$SegurosPref    = $data['SegurosPref'];
+		$SegurosPref  = $data['SegurosPref'];
 		$Hospitalar   = $data['Hospitalar'];
 
 	}

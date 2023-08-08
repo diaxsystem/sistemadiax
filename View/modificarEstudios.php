@@ -18,12 +18,8 @@ require_once('../Controllers/modificarEstudios.php');
               <form action="" method="POST">
                   <input type="hidden" name="id" id="id" value="<?php echo $_REQUEST['id']; ?>">
                 <div class="form-group">
-                  <input class="form-control" type="hidden" name="Estudio" id="Estudio" placeholder="Ingrese el Estudio" 
-                   value="<?php echo $Estudio; ?>">
-                </div>
-                <div class="form-group">
                   <label class="control-label"> Estudio</label>
-                  <input class="form-control" type="text" name="Estudio" id="Estudio" placeholder="Ingrese el monto" required
+                  <input class="form-control" type="text" name="Estudio" id="Estudio" placeholder="Ingrese el estudio" required
                   value="<?php echo $Estudio; ?>">
                 </div>
                 
@@ -48,7 +44,7 @@ require_once('../Controllers/modificarEstudios.php');
                   value="<?php echo $Hospitalar; ?>">
                 </div>
 
-                <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+                <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
                 <a class="btn btn-light" href="../Templates/estudios.php">Cancelar</a>
                 <br>
                 <?php if ($alert != "") {  ?>
