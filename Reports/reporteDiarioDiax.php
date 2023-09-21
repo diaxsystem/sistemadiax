@@ -83,7 +83,7 @@ ob_start();
                 $hoy = date_format($anio, 'm-Y');
 
                 $sql = mysqli_query($conection, "SELECT DISTINCT(h.id),c.nombre,c.apellido,h.Estudio,h.Cedula,h.Atendedor,h.Fecha,h.Seguro,h.Monto,h.Descuento,h.MontoS,h.Comentario, h.fecha_2 
-                FROM historial h inner join clientes c on c.cedula = h.cedula  where $where and Fecha like '%".$hoy."%' and atendedor like '%".$diax."%' ORDER BY  h.id ASC");
+                FROM historial h inner join clientes c on c.cedula = h.cedula  where $where and Fecha like '%".$hoy."%' and atendedor like '%".$diax."%' and h.estatus = 1 ORDER BY  h.id ASC");
               
               
                 $resultado = mysqli_num_rows($sql);
